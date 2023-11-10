@@ -1,0 +1,41 @@
+.contend-area .download-section {
+    background: #ffffff;
+    overflow: hidden;
+    color: #000000;
+	padding: 100px 0;
+}
+
+.contend-area .download-section h1{
+	font-weight: 100;
+	font-size: 55px;
+	line-height: 1.1;
+	margin: 0;
+}
+
+.contend-area .download-section .download-content-section {
+	width: 63%;
+}
+
+.contend-area .download-section p {
+	font-weight: 300;
+	margin-top: 50px;
+	line-height: 1.7;
+}
+
+.contend-area .download-section a {
+	text-decoration: none;
+	color: #FFF;
+	border: 3px solid #FFF;
+	padding: 16px 65px;
+	margin: 25px 0;
+	border-radius: 3px;
+	display: inline-block;
+	font-size: 18px;
+	letter-spacing: 2px;
+	transition: all .7s;
+}
+
+.contend-area .download-section a:hover {
+	color: #a58347;
+	border-color: #a58347;
+}

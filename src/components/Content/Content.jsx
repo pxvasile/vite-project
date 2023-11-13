@@ -1,10 +1,11 @@
-import AboutUs from "./AboutUs";
-import OurServices from "./OurServices";
+import AboutUs from "../AboutUs";
+import Catalog from "../Catalog/Catalog";
+// import '../Content/Content.module.css';
 
 export default function Content() {
     return(
         <div className="contend-area">
-          <OurServices />
+          <Catalog />
           <AboutUs />
 
         <div className="demo-section">

@@ -1,7 +1,7 @@
-import Content from "./components/Content"
-import InfoSection from "./components/InfoSection"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Content from "./components/Content/Content";
+import InfoSection from "./components/InfoSection";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer";
 
 function App() {
 

@@ -5,7 +5,7 @@ import Catalog from "../Catalog/Catalog";
 export default function Content() {
     return(
         <div className="contend-area">
-          <Catalog />
+          {/* <Catalog /> */}
           <AboutUs />
 
         <div className="demo-section">

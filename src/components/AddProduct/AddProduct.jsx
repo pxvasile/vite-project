@@ -1,30 +1,38 @@
+import '../AddProduct/AddProduct.module.css';
+
 export default function AddProduct() {
-    return(
+    return (
         <>
-        <section id="create-page" className="auth">
-            <form id="create">
-                <div className="container">
+            <div className="main-block">
+                <form action="/">
+                    <div className="title">
+                        <i className="fas fa-pencil-alt" />
+                        <h2>Add Product</h2>
+                    </div>
+                    <div className="info">
+                        <input className="fname" type="text" name="name" placeholder="Full name" />
+                        <input type="text" name="name" placeholder="Email" />
+                        <input type="text" name="name" placeholder="Phone number" />
+                        <input type="password" name="name" placeholder="Password" />
+                        <select>
+                            <option value="course-type" selected="">
+                                Course type*
+                            </option>
+                            <option value="short-courses">Short courses</option>
+                            <option value="featured-courses">Featured courses</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="certificate">Certificate</option>
+                            <option value="masters-degree">Masters degree</option>
+                            <option value="postgraduate">Postgraduate</option>
+                        </select>
+                    </div>
+                    <button type="submit" href="/">
+                        Submit
+                    </button>
+                </form>
+            </div>
 
-                    <h1>Create Game</h1>
-
-                    <label htmlFor="leg-title">Legendary title:</label>
-                    <input type="text" id="title" name="title" placeholder="Enter game title..." />
-
-                    <label htmlFor="category">Category:</label>
-                    <input type="text" id="category" name="category" placeholder="Enter game category..." />
-
-                    <label htmlFor="levels">MaxLevel:</label>
-                    <input type="number" id="maxLevel" name="maxLevel" min="1" placeholder="1" />
-
-                    <label htmlFor="game-img">Image:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
-
-                    <label htmlFor="summary">Summary:</label>
-                    <textarea name="summary" id="summary"></textarea>
-                    <input className="btn submit" type="submit" value="Create Game" />
-                </div>
-            </form>
-        </section>
-    </>
+        </>
     )
 }

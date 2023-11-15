@@ -309,7 +309,7 @@ body {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-.info-area {
+/* .info-area {
 	background-color: #2f2519;
 	color: #ffffff;
 	padding-top: 45px;
@@ -349,13 +349,13 @@ body {
 	font-weight: 300;
 	padding-right: 90px;
 	font-size: 30px;
-}
+} */
 
 .footer-area {
 	background-color: #ffffff;
 	color: #000000;
-	padding-top: 120px;
 	text-align: center;
+	height: 5px;
 }
 
 
@@ -366,7 +366,7 @@ body {
 
 .footer-area .logo img {
 	transition: all 3s;
-	width: 5%;
+	width: 3%;
 	height: auto;
 }
 
@@ -379,9 +379,9 @@ body {
 	font-size: 13px;
     color: #000000;
     letter-spacing: 3px;
-	font-weight: 300;
+	font-weight: 200;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
 .footer-area .copyright a{

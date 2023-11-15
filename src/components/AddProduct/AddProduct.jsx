@@ -6,25 +6,22 @@ export default function AddProduct() {
             <div className="main-block">
                 <form action="/">
                     <div className="title">
-                        <i className="fas fa-pencil-alt" />
                         <h2>Add Product</h2>
                     </div>
-                    <div className="info">
-                        <input className="fname" type="text" name="name" placeholder="Full name" />
-                        <input type="text" name="name" placeholder="Email" />
-                        <input type="text" name="name" placeholder="Phone number" />
-                        <input type="password" name="name" placeholder="Password" />
-                        <select>
-                            <option value="course-type" selected="">
-                                Course type*
-                            </option>
-                            <option value="short-courses">Short courses</option>
-                            <option value="featured-courses">Featured courses</option>
-                            <option value="undergraduate">Undergraduate</option>
-                            <option value="diploma">Diploma</option>
-                            <option value="certificate">Certificate</option>
-                            <option value="masters-degree">Masters degree</option>
-                            <option value="postgraduate">Postgraduate</option>
+                    <div className="info">    
+                        <label htmlFor="product-name">Product name:</label>
+                        <input type="text" name="productName" placeholder="Product name..." />
+
+                        <label htmlFor="category">Category:</label>
+                        <input type="text" name="category" placeholder="Category..." />
+
+                        <label htmlFor="price">Price:</label>
+                        <input type="number" name="price" placeholder="Price..." />
+                        <select value="material">
+                            <option value="mdf" placeholder="">MDF</option>
+                            <option value="pdch" placeholder="">PDCH</option>
+                            <option value="solid-wood" placeholder="">SOLID WOOD</option>
+                            <option value="pallets" placeholder="">Pallets</option>
                         </select>
                     </div>
                     <button type="submit" href="/">

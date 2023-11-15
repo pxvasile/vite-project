@@ -1,7 +1,5 @@
-    div,
-    form,
-    input,
-    select,
+form,
+    input, select,
     p {
         padding: 0;
         margin: 0;
@@ -19,16 +17,17 @@
 
     h2 {
         margin: 0 0 0 8px;
+        text-align: center;
     }
 
     .main-block {
-        display: flex;
+        display: inline-block;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
-        width: 40%;
+        padding-left: 30;
     }
 
     form {
@@ -48,13 +47,23 @@
         flex-direction: column;
     }
 
-    input,
+    label {
+        padding: 5px;
+        margin-bottom: 30px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #eee;
+        
+    }
+    
+    input, 
     select {
         padding: 5px;
         margin-bottom: 30px;
         background: transparent;
         border: none;
         border-bottom: 1px solid #eee;
+        font-style: italic;
     }
 
     input::placeholder {

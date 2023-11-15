@@ -12,7 +12,7 @@ import Register from './components/Register/Register';
 function App() {
 
     return (
-        <div>
+        <>
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -23,7 +23,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
             </Routes>
             <Footer />
-        </div>
+        </>
     )
 }
 

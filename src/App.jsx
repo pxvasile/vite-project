@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer";
+import Header from './components/Header/Header';
+import Footer from './components/Footer';
 import Home from './components/Home/Home';
 import Catalog from './components/Catalog/Catalog';
 import AddProduct from './components/AddProduct/AddProduct';

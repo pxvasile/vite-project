@@ -28,7 +28,7 @@
 }
 
 .logo-name{
-    color: #ff7200;
+    color: #fa7d09;
     font-size: 30px;
     font-family: Arial;
     float: left;
@@ -65,7 +65,7 @@ ul li a{
 }
 
 ul li a:hover{
-    color: #ff7200;
+    color: #fa7d09;
     font-weight: bold;
     background: #54586352;
 	border-bottom: 2px solid #e2b17b;
@@ -82,7 +82,7 @@ ul li a:hover{
     width: 200px;
     height: 40px;
     background: transparent;
-    border: 1px solid #ff7200;
+    border: 1px solid #fa7d09;
     margin-top: 13px;
     color: #fff;
     border-right: none;
@@ -96,8 +96,8 @@ ul li a:hover{
 .btn{
     width: 100px;
     height: 40px;
-    background: #ff7200;
-    border: 2px solid #ff7200;
+    background: #fa7d09;
+    border: 2px solid #fa7d09;
     margin-top: 13px;
     color: #fff;
     font-size: 15px;
@@ -146,10 +146,10 @@ ul li a:hover{
 .content .cn{
     width: 160px;
     height: 40px;
-    background: #ff7200;
+    background: #fa7d09;
     border: none;
     margin-bottom: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     margin-left: 20px;
     font-size: 18px;
     border-radius: 10px;
@@ -169,11 +169,11 @@ ul li a:hover{
 }
 
 .content span{
-    color: #ff7200;
+    color: #fa7d09;
     font-size: 65px
 }
 
-.form{
+/* .form{
     width: 250px;
     height: 380px;
     background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
@@ -189,7 +189,7 @@ ul li a:hover{
     width: 220px;
     font-family: sans-serif;
     text-align: center;
-    color: #ff7200;
+    color: #fa7d09;
     font-size: 22px;
     background-color: #fff;
     border-radius: 10px;
@@ -201,7 +201,7 @@ ul li a:hover{
     width: 240px;
     height: 35px;
     background: transparent;
-    border-bottom: 1px solid #ff7200;
+    border-bottom: 1px solid #fa7d09;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -224,7 +224,7 @@ ul li a:hover{
 .btnn{
     width: 240px;
     height: 40px;
-    background: #ff7200;
+    background: #fa7d09;
     border: none;
     margin-top: 30px;
     font-size: 18px;
@@ -235,13 +235,13 @@ ul li a:hover{
 }
 .btnn:hover{
     background: #fff;
-    color: #ff7200;
+    color: #fa7d09;
 }
 .btnn a{
     text-decoration: none;
     color: #000;
     font-weight: bold;
-}
+} */
 .form .link{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
@@ -250,7 +250,7 @@ ul li a:hover{
 }
 .form .link a{
     text-decoration: none;
-    color: #ff7200;
+    color: #fa7d09;
 }
 .liw{
     padding-top: 15px;
@@ -269,7 +269,7 @@ ul li a:hover{
     transition: 0.3s ease;
 }
 .icons ion-icon:hover{
-    color: #ff7200;
+    color: #fa7d09;
 }
 
 /* footer area */

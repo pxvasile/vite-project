@@ -1,15 +1,20 @@
+import { Link } from "react-router-dom";
+import './CatalogItem.css';
 
+export default function CatalogItem({
+    productName,
+    category,
+    imageUrl
+}) {
+    return(
+        <div className="allProducts">
+        <div className="allProducts-info">
+        <img src={imageUrl} />
+                    <h2>{productName}</h2>
+                    <h2>{category}</h2>
+                    <Link to="/details" className="details-button">Details</Link>
+                </div>
 
-// export default function CatalogItem() {
-//     return(
-//         <div className="allProducts">
-//         <div className="allProducts-info">
-//         <img src="./images/avatar-1.jpg" />
-//                     <h6>Action</h6>
-//                     <h2>Cover Fire</h2>
-//                     <a href="#" class="details-button">Details</a>
-//                 </div>
-
-//     </div>
-//     )
-// }
+    </div>
+    )
+}

@@ -1,0 +1,43 @@
+.allProducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #666;
+}
+
+.allProducts-info {
+    box-sizing: border-box;
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.allProducts-info:hover {
+    transform: scale(1.05);
+}
+
+.allProducts-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.allProducts-info h3 {
+    margin-top: 10px;
+}
+
+.allProducts-info p {
+    color: #666;
+}
+
+.allProducts-info span {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}

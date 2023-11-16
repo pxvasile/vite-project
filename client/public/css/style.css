@@ -16,15 +16,15 @@
 }
 
 .navbar{
-    width: 1600px;
-    height: 75px;
+    width: 100rem;
+    height: 4.6875rem;
     margin: auto;
 }
 
 .icon{
-    width: 200px;
+    width: 12.5rem;
     float: left;
-    height: 70px;
+    height: 4.375rem;
 }
 
 .logo-name{
@@ -37,9 +37,9 @@
 }
 
 .menu{
-    width: 1000px;
+    width: 62.5rem;
     float: left;
-    height: 70px;
+    height: 4.375rem;
 }
 
 ul{
@@ -79,8 +79,8 @@ ul li a:hover{
 
 .srch{
     font-family: 'Times New Roman';
-    width: 200px;
-    height: 40px;
+    width: 12.5rem;
+    height: 2.5rem;
     background: transparent;
     border: 1px solid #fa7d09;
     margin-top: 13px;
@@ -88,9 +88,9 @@ ul li a:hover{
     border-right: none;
     font-size: 16px;
     float: left;
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+    padding: 0.625rem;
+    border-bottom-left-radius: 0.3125rem;
+    border-top-left-radius: 0.3125rem;
 }
 
 .btn{

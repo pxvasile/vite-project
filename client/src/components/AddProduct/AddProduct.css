@@ -1,6 +1,6 @@
 .form {
     width: 25rem;
-    height: 23.75rem;
+    height: 29rem;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
     position: absolute;
     top: 7.5rem;
@@ -105,4 +105,9 @@
 
 #imageUrl {
     padding-bottom: 1px;
+}
+
+.labelm {
+    margin-right: 10px;
+    margin-left: 40px;
 }

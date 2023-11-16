@@ -21,8 +21,8 @@ export default function AddProduct() {
                 <label htmlFor="product-img">Image:</label>
                 <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
 
-                <label htmlFor="material">Material:</label>
-                <select id="material">
+                <label className="labelm" htmlFor="material">Material:</label>
+                <select id="material" name="material">
                     <option value="mdf">MDF</option>
                     <option value="pdch">PDCH</option>
                     <option value="solid-wood">Solid Wood</option>

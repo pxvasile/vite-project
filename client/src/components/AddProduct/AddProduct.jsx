@@ -18,6 +18,9 @@ export default function AddProduct() {
                 <label htmlFor="price">Price:</label>
                 <input type="number" id="price" name="price" placeholder="Enter Price Here..." /><br />
 
+                <label htmlFor="product-img">Image:</label>
+                <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
+
                 <label htmlFor="material">Material:</label>
                 <select id="material">
                     <option value="mdf">MDF</option>

@@ -19,7 +19,7 @@ export default function AddProduct({
     }
 
     const onSubmit = (e) => {
-        e.preventDefault,
+        e.preventDefault(),
 
         onAddProductSubmit(values);
     }
@@ -48,7 +48,7 @@ export default function AddProduct({
                     <option value="pdch">PDCH</option>
                     <option value="solid-wood">Solid Wood</option>
                 </select>
-                <button className="btnn"><Link to="/catalog">ADD Product</Link></button>
+                <input type="submit" className="btnn" value="ADD Product" />
                 </div>
             </form>
         </>

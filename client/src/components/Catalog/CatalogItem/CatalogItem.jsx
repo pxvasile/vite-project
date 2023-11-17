@@ -6,15 +6,14 @@ export default function CatalogItem({
     category,
     imageUrl
 }) {
-    return(
+    return (
         <div className="allProducts">
-        <div className="allProducts-info">
-        <img src={imageUrl} />
-                    <h2>{productName}</h2>
-                    <h2>{category}</h2>
-                    <Link to="/details" className="details-button">Details</Link>
-                </div>
-
-    </div>
+            <div className="allProducts-info">
+                <img src={imageUrl} />
+                <h2>{productName}</h2>
+                <h2>{category}</h2>
+                <a href="#" className="details-button">Details</a>
+            </div>
+        </div>
     )
 }

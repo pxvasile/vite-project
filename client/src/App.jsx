@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 import * as productService from './services/productService';
 
@@ -12,8 +13,21 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 
 function App() {
+    const navigate = useNavigate();
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        productService.getAll()
+            .then(result => setProducts(result));
+    }, []);
+
     const onAddProductSubmit = async (data) => {
         const newProduct = await productService.create(data);
+
+        setProducts(state => [...state, newProduct]);
+
+        navigate("/catalog");
     }
 
     return (
@@ -22,7 +36,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/catalog" element={<Catalog />} />
+                    <Route path="/catalog" element={<Catalog products={products} />} />
                     <Route path="/add-product" element={<AddProduct onAddProductSubmit={onAddProductSubmit}/>} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/login" element={<Login />} />

@@ -1,8 +1,7 @@
 .allProducts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: space-between;
     background-color: #666;
 }
 
@@ -27,17 +26,14 @@
     border-radius: 5px;
 }
 
-.allProducts-info h3 {
-    margin-top: 10px;
-}
-
 .allProducts-info p {
     color: #666;
 }
 
-.allProducts-info span {
+.allProducts-info h2 {
     display: block;
     font-weight: bold;
     margin-top: 10px;
     color: #333;
 }
+

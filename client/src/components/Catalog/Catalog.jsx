@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import * as productService from '../../services/productService';
 import CatalogItem from "./CatalogItem/CatalogItem";
+import './Catalog.css';
 
 export default function Catalog() {
     const [products, setProducts] = useState([]);
@@ -14,8 +15,10 @@ export default function Catalog() {
 
     return (
         <>
-            <section id="catalog-page">
+            <div className="catalogHead">
                 <h1>All Products</h1>
+            </div>
+            <section id="catalog-page">
 
                 {products.map(x => <CatalogItem key={x._id} {...x} />)}
 

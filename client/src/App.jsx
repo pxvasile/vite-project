@@ -1,5 +1,6 @@
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import * as productService from './services/productService';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
@@ -11,6 +12,10 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 
 function App() {
+    const onAddProductSubmit = async (data) => {
+        const newProduct = await productService.create(data);
+    }
+
     return (
         <>
             <div className="main">
@@ -18,7 +23,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/catalog" element={<Catalog />} />
-                    <Route path="/add-product" element={<AddProduct />} />
+                    <Route path="/add-product" element={<AddProduct onAddProductSubmit={onAddProductSubmit}/>} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />

@@ -48,7 +48,7 @@ export default function AddProduct({
                     <option value="pdch">PDCH</option>
                     <option value="solid-wood">Solid Wood</option>
                 </select>
-                <input type="submit" className="btnn" value="ADD Product" />
+                <button type="submit" className="btnn" value="ADD Product">ADD PRODUCT</button>
                 </div>
             </form>
         </>

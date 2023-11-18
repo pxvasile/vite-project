@@ -1,5 +1,5 @@
 #catalog-page {
-    background-color: #666;
+    background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     overflow: hidden;
     padding-bottom: 72px;
     height: auto;
@@ -12,7 +12,7 @@
 .catalogHead h1 {
     font-family: "Agency FB";
     text-transform: uppercase;
-    background-color: #666;
+   background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     text-align: center;
     display: block;
     font-weight: bold;

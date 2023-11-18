@@ -1,0 +1,197 @@
+#product-details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+    overflow: hidden;
+    padding-bottom: 72px;
+    height: auto;
+    width: 40%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: flex;
+    margin-left: 30%;
+}
+
+#product-details>h1 {
+    width: 400px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #fa7d09;
+    font-size: 34px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2px;
+    margin-top: 14px;
+}
+
+.info-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+.product-header {
+    position: relative;
+    padding: 25px;
+    height: 40%;
+}
+
+.product-header h1 {
+    color: white;
+    margin-top: 5px;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.product-header>h4 {
+    color: #fff;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.material {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #fa7d09;
+}
+
+.type {
+    display: inline-block;
+    color: white;
+    font-size: 19px;
+    margin-left: 10px;
+}
+
+.product-img {
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    margin-right: 22px;
+    height: 220px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.info-section>.text {
+    margin-top: 30px;
+    padding: 60px;
+    height: 50%;
+}
+
+.game-summary {
+    margin-top: 15px;
+    padding: 60px;
+    height: 50%;
+}
+
+.text {
+    font-size: 25px;
+    color: white;
+}
+
+.movie_social {
+    height: 10%;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+
+.movie_social {
+    font-size: 1.6rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.buttons {
+    height: 10%;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.button {
+    height: 15%;
+    background: #ff7200;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 10px;
+    border: none;
+    font-size: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s ease;
+    margin-left: 20px;
+}
+
+.button:hover {
+    background-color: white;
+    color: #ff7200;
+}
+
+/* Comments CSS */
+.create-comment>.form>textarea {
+    resize: none;
+    width: 100px;
+    height: 100px;
+    margin-top: 22px;
+    margin-bottom: 28px;
+    padding: 5px;
+}
+
+.details-comments {
+    display: table-cell;
+    color: #fff;
+}
+
+.create-comment {
+    margin-top: 60px;
+    position: relative;
+    text-align: center;
+    width: 700px;
+    height: auto;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ff7200;
+    box-shadow: 0px 0px 32px 0px #32485e, -14px -14px 20px #191c21;
+}
+
+.create-comment>label {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 70px;
+    line-height: normal;
+}
+
+.info-section>.details-comments li {
+    width: 300px;
+    display: inline-block;
+    position: static;
+    margin: 20px auto 20px auto;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 16px;
+    margin-left: 60px;
+    background: #fa7d09;
+    color: white;
+}
+
+.comment p {
+    padding: 16px;
+}
+
+.no-comment p {
+    padding: 16px;
+    color: white;
+}
+
+
+.create-comment>.button:hover {
+    background-color: #ff7200;
+    color: white;
+    cursor: pointer;
+}

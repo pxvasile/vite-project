@@ -1,7 +1,7 @@
 {
     "503601e0-e427-48e0-83cd-2b02574eab46": {
         "productName": "Table",
-        "category": "Homemade",
+        "category": "Dinning room",
         "price": "112",
         "imageUrl": "images/s2.jpg",
         "material": "Solid Wood",
@@ -9,7 +9,7 @@
     },
     "f84a0530-0266-4aba-8834-523320138edd": {
         "productName": "Desk",
-        "category": "Homemade",
+        "category": "Office",
         "price": "75",
         "imageUrl": "images/s1.jpg",
         "material": "Solid Wood",

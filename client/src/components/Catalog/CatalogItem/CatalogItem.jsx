@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import './CatalogItem.css';
 
 export default function CatalogItem({
+    _id,
     productName,
     category,
     imageUrl
@@ -11,8 +12,8 @@ export default function CatalogItem({
             <div className="allProducts-info">
                 <img src={imageUrl} />
                 <h2>{productName}</h2>
-                <h2>{category}</h2>
-                <a href="#" className="details-button">Details</a>
+                <h3>{category}</h3>
+                <Link to={`/catalog/${_id}`} className="details-button">Details</Link>
             </div>
         </div>
     )

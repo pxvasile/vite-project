@@ -11,6 +11,7 @@ import AddProduct from './components/AddProduct/AddProduct';
 import AboutUs from './components/AboutUs';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/ProductDetailsInfo';
 
 function App() {
     const navigate = useNavigate();
@@ -41,6 +42,7 @@ function App() {
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/catalog/:productId" element={<ProductDetailsInfo />} />
                 </Routes>
             </div>
             <Footer />

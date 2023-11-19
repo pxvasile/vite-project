@@ -3,21 +3,24 @@
     height: 29rem;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
     position: absolute;
-    top: 7.5rem;
-    left: 54.375rem;
+    left: 42%;
     transform: translate(0%, -5%);
     border-radius: 0.625rem;
     padding: 1.5625rem;
+    margin-top: 3.3%;
+
 }
 
 .form h2 {
     width: 400px;
+    height: 40px;
     font-family: sans-serif;
     text-align: center;
     color: #fa7d09;
     font-size: 22px;
     background-color: #fff;
     border-radius: 10px;
+    padding-top: 12px;
     margin: 2px;
 }
 

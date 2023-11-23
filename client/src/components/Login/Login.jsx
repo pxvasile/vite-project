@@ -1,15 +1,19 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../contexts/authContext';
+
 import useForm from '../../hooks/useForm';
 import './Login.css';
+
+
 
 const LoginFormKeys = {
     Email: 'email',
     Password: 'password',
 }
 
-export default function Login({
-    loginSubmitHandler,
-}) {
+export default function Login() {
+    const { loginSubmitHandler } = useContext(AuthContext);
     const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
@@ -18,7 +22,7 @@ export default function Login({
     return (
         <>
             <form className="form-login" onSubmit={onSubmit}>
-                <h2>Login Here</h2>
+                <h2>Login</h2>
                 <input 
                     type="email" 
                     name={LoginFormKeys.Email} 

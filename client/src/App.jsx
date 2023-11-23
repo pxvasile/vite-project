@@ -2,6 +2,9 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import * as productService from './services/productService';
+import * as authService from './services/authService';
+import AuthContext from './contexts/authContext';
+import Path from './paths';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
@@ -12,6 +15,7 @@ import AboutUs from './components/AboutUs';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/ProductDetailsInfo';
+
 
 function App() {
     const [auth, setAuth] = useState({});
@@ -32,28 +36,34 @@ function App() {
         navigate("/catalog");
     }
 
-    const loginSubmitHandler = (values) => {
-        console.log(values);
+    const loginSubmitHandler = async (values) => {
+        const result = await authService.login(values.email,values.password);
+
+        setAuth(result);
+        
+        navigate(Path.Home);
     };
 
     return (
         <>
+            <AuthContext.Provider value={{ loginSubmitHandler }}> 
             <div className="main">
                 <Header />
 
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/catalog" element={<Catalog products={products} />} />
-                    <Route path="/add-product" element={<AddProduct onAddProductSubmit={onAddProductSubmit}/>} />
-                    <Route path="/about-us" element={<AboutUs />} />
-                    <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler} />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/catalog/:productId" element={<ProductDetailsInfo />} />
+                    <Route path={Path.Home} element={<Home />} />
+                    <Route path={Path.Catalog} element={<Catalog products={products} />} />
+                    <Route path={Path.AddProduct} element={<AddProduct onAddProductSubmit={onAddProductSubmit}/>} />
+                    <Route path={Path.AboutUs} element={<AboutUs />} />
+                    <Route path={Path.Login} element={<Login />} />
+                    <Route path={Path.Register} element={<Register />} />
+                    <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />
                 </Routes>
             </div>
             <Footer />
+            </AuthContext.Provider>
         </>
     )
 }
 
-export default App
+export default App;

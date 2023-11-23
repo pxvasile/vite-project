@@ -1,13 +1,38 @@
 import { Link } from 'react-router-dom';
+import useForm from '../../hooks/useForm';
 import './Login.css';
 
-export default function Login() {
+const LoginFormKeys = {
+    Email: 'email',
+    Password: 'password',
+}
+
+export default function Login({
+    loginSubmitHandler,
+}) {
+    const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+        [LoginFormKeys.Email]: '',
+        [LoginFormKeys.Password]: '',
+    });
+
     return (
         <>
-            <div className="form-login">
+            <form className="form-login" onSubmit={onSubmit}>
                 <h2>Login Here</h2>
-                <input type="email" name="email" placeholder="Enter Email Here..." />
-                <input type="password" name="" placeholder="Enter Password Here..." />
+                <input 
+                    type="email" 
+                    name={LoginFormKeys.Email} 
+                    placeholder="Enter Email Here..." 
+                    onChange={onChange}
+                    value={values[LoginFormKeys.Email]}
+                />
+                <input 
+                    type="password" 
+                    name={LoginFormKeys.Password} 
+                    placeholder="Enter Password Here..." 
+                    onChange={onChange}
+                    value={values[LoginFormKeys.Password]}
+                />
                 <button type="submit" className="form-login-btnn" value="Login">Login</button>
 
                 <p className="link">Don't have an account
@@ -22,7 +47,7 @@ export default function Login() {
                     <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
                 </div>
 
-            </div>
+            </form>
         </>
     )
 }

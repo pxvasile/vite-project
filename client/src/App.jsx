@@ -14,6 +14,7 @@ import Register from './components/Register/Register';
 import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/ProductDetailsInfo';
 
 function App() {
+    const [auth, setAuth] = useState({});
     const navigate = useNavigate();
 
     const [products, setProducts] = useState([]);
@@ -31,16 +32,21 @@ function App() {
         navigate("/catalog");
     }
 
+    const loginSubmitHandler = (values) => {
+        console.log(values);
+    };
+
     return (
         <>
             <div className="main">
                 <Header />
+
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/catalog" element={<Catalog products={products} />} />
                     <Route path="/add-product" element={<AddProduct onAddProductSubmit={onAddProductSubmit}/>} />
                     <Route path="/about-us" element={<AboutUs />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler} />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/catalog/:productId" element={<ProductDetailsInfo />} />
                 </Routes>

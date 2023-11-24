@@ -4,6 +4,7 @@ const Path = {
     AddProduct: '/add-product',
     AboutUs: '/about-us',
     Login: '/login',
+    Logout: '/logout',
     Register: '/register',
     ProductDetails: '/catalog/:productId'
 };

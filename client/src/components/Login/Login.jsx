@@ -1,11 +1,10 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import AuthContext from '../../contexts/authContext';
 
+import AuthContext from '../../contexts/authContext';
 import useForm from '../../hooks/useForm';
 import './Login.css';
-
-
+import Path from '../../paths';
 
 const LoginFormKeys = {
     Email: 'email',
@@ -40,7 +39,7 @@ export default function Login() {
                 <button type="submit" className="form-login-btnn" value="Login">Login</button>
 
                 <p className="link">Don't have an account
-                    <Link href="#">Sign up here</Link></p>
+                    <Link to={Path.Register}>Sign up here</Link></p>
                 <p className="liw">Log in with</p>
 
                 <div className="icons">

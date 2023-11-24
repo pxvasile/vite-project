@@ -15,6 +15,7 @@ import AboutUs from './components/AboutUs';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/ProductDetailsInfo';
+import Logout from './components/Logout/Logout';
 
 
 function App() {
@@ -44,9 +45,26 @@ function App() {
         navigate(Path.Home);
     };
 
+    const registerSubmitHandler = (values) => {
+        console.log(values);
+    }
+
+    const logoutSubmitHandler = async () => {
+        result = await authService.logout();
+
+        navigate(Path.Home);
+    }
+
+    const values = {
+        registerSubmitHandler,
+        loginSubmitHandler,
+        email: auth.email,
+        username: auth.username,
+        isAuthenticated: !!auth.username,
+    }
     return (
         <>
-            <AuthContext.Provider value={{ loginSubmitHandler }}> 
+            <AuthContext.Provider value={values}> 
             <div className="main">
                 <Header />
 
@@ -56,6 +74,7 @@ function App() {
                     <Route path={Path.AddProduct} element={<AddProduct onAddProductSubmit={onAddProductSubmit}/>} />
                     <Route path={Path.AboutUs} element={<AboutUs />} />
                     <Route path={Path.Login} element={<Login />} />
+                    <Route path={Path.Logout} element={<Logout />} />
                     <Route path={Path.Register} element={<Register />} />
                     <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />
                 </Routes>

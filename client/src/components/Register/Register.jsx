@@ -1,19 +1,56 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+
+import AuthContext from '../../contexts/authContext';
+
+import useForm from '../../hooks/useForm';
 import './Register.css';
+import Path from '../../paths';
+
+const RegisterFormKeys = {
+    Email: 'email',
+    Password: 'password',
+    Username: 'username',
+    ConfirmPassword: 'repass',
+}
 
 export default function Register() {
+    const { registerSubmitHandler } = useContext(AuthContext);
+    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+
+    })
     return (
         <>
-            <div className="form-register">
+            <form className="form-register" onSubmit={onSubmit}>
                 <h2>Register Here</h2>
-                <input type="text" name="userName" placeholder="Enter Name Here..." />
-                <input type="email" name="email" placeholder="Enter Email Here..." />
-                <input type="password" name="password" placeholder="Enter Password Here..." />
-                <input type="password" name="repass" placeholder="Confirm Password Here..." />
+                <input 
+                    type="text" 
+                    name={RegisterFormKeys.Username} 
+                    onChange={onChange} 
+                    placeholder="Enter Name Here..."
+                />
+                <input 
+                    type="email" 
+                    name={RegisterFormKeys.Email} 
+                    onChange={onChange} 
+                    placeholder="Enter Email Here..." 
+                />
+                <input 
+                    type="password" 
+                    name={RegisterFormKeys.Password} 
+                    onChange={onChange} 
+                    placeholder="Enter Password Here..." 
+                />
+                <input 
+                    type="password" 
+                    name={RegisterFormKeys.ConfirmPassword}
+                    onChange={onChange}  
+                    placeholder="Confirm Password Here..." 
+                />
                 <button type="submit" className="form-register-btnn" value="Register">Register</button>
 
                 <p className="link">Have an account
-                    <Link href="#">Login in here</Link></p>
+                    <Link to={Path.Login}>Login in here</Link></p>
                 <p className="liw">Log in with</p>
 
                 <div className="icons">
@@ -24,7 +61,7 @@ export default function Register() {
                     <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
                 </div>
 
-            </div>
+            </form>
         </>
     )
 }

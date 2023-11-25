@@ -8,16 +8,19 @@ import './Register.css';
 import Path from '../../paths';
 
 const RegisterFormKeys = {
+    Username: 'username',
     Email: 'email',
     Password: 'password',
-    Username: 'username',
     ConfirmPassword: 'repass',
 }
 
 export default function Register() {
     const { registerSubmitHandler } = useContext(AuthContext);
     const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-
+        [RegisterFormKeys.Username]: '',
+        [RegisterFormKeys.Email]: '',
+        [RegisterFormKeys.Password]: '',
+        [RegisterFormKeys.ConfirmPassword]: '',
     })
     return (
         <>
@@ -28,24 +31,28 @@ export default function Register() {
                     name={RegisterFormKeys.Username} 
                     onChange={onChange} 
                     placeholder="Enter Name Here..."
+                    value={values[RegisterFormKeys.Username]}
                 />
                 <input 
                     type="email" 
                     name={RegisterFormKeys.Email} 
                     onChange={onChange} 
                     placeholder="Enter Email Here..." 
+                    value={values[RegisterFormKeys.Email]}
                 />
                 <input 
                     type="password" 
                     name={RegisterFormKeys.Password} 
                     onChange={onChange} 
                     placeholder="Enter Password Here..." 
+                    value={values[RegisterFormKeys.Password]}
                 />
                 <input 
                     type="password" 
                     name={RegisterFormKeys.ConfirmPassword}
                     onChange={onChange}  
                     placeholder="Confirm Password Here..." 
+                    value={values[RegisterFormKeys.ConfirmPassword]}
                 />
                 <button type="submit" className="form-register-btnn" value="Register">Register</button>
 

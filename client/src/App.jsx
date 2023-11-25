@@ -38,48 +38,56 @@ function App() {
     }
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email,values.password);
+        const result = await authService.login(values.email, values.password);
 
         setAuth(result);
-        
+
         navigate(Path.Home);
     };
 
-    const registerSubmitHandler = (values) => {
-        console.log(values);
-    }
+    const registerSubmitHandler = async (values) => {
+        const result = await authService.register(
+            values.username,
+            values.email,
+            values.password
+        )
 
-    const logoutSubmitHandler = async () => {
-        result = await authService.logout();
+        setAuth(result);
 
         navigate(Path.Home);
-    }
+    };
+
+    // const logoutSubmitHandler = async () => {
+    //     result = await authService.logout();
+
+    //     navigate(Path.Home);
+    // };
 
     const values = {
         registerSubmitHandler,
         loginSubmitHandler,
-        email: auth.email,
         username: auth.username,
-        isAuthenticated: !!auth.username,
+        email: auth.email,
+        isAuthenticated: !!auth.email,
     }
     return (
         <>
-            <AuthContext.Provider value={values}> 
-            <div className="main">
-                <Header />
+            <AuthContext.Provider value={values}>
+                <div className="main">
+                    <Header />
 
-                <Routes>
-                    <Route path={Path.Home} element={<Home />} />
-                    <Route path={Path.Catalog} element={<Catalog products={products} />} />
-                    <Route path={Path.AddProduct} element={<AddProduct onAddProductSubmit={onAddProductSubmit}/>} />
-                    <Route path={Path.AboutUs} element={<AboutUs />} />
-                    <Route path={Path.Login} element={<Login />} />
-                    <Route path={Path.Logout} element={<Logout />} />
-                    <Route path={Path.Register} element={<Register />} />
-                    <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />
-                </Routes>
-            </div>
-            <Footer />
+                    <Routes>
+                        <Route path={Path.Home} element={<Home />} />
+                        <Route path={Path.Catalog} element={<Catalog products={products} />} />
+                        <Route path={Path.AddProduct} element={<AddProduct onAddProductSubmit={onAddProductSubmit} />} />
+                        <Route path={Path.AboutUs} element={<AboutUs />} />
+                        <Route path={Path.Login} element={<Login />} />
+                        <Route path={Path.Logout} element={<Logout />} />
+                        <Route path={Path.Register} element={<Register />} />
+                        <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />
+                    </Routes>
+                </div>
+                <Footer />
             </AuthContext.Provider>
         </>
     )

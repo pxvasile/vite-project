@@ -6,7 +6,7 @@ import Path from '../../paths';
 
 export default function Header() {
 
-    const { email, username, isAuthenticated } = useContext(AuthContext);
+    const { username, isAuthenticated } = useContext(AuthContext);
     return (
             <div className="navbar">
                 <div className="icon">
@@ -22,6 +22,7 @@ export default function Header() {
                         <>
                         <li><Link to={Path.AddProduct}>ADD PRODUCT</Link></li>
                         <li><Link to={Path.Logout}>LOGOUT</Link></li>
+                        <li><span>Hi, {username}!</span></li>
                         </> 
                         )}  
 

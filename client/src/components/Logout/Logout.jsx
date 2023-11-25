@@ -1,14 +1,22 @@
-// import { useContext } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-// import AuthContext from "../../contexts/authContext";
-// import Path from '../../paths';
+import * as authService from '../../services/authService';
+import Path from '../../paths';
+import AuthContext from "../../contexts/authContext";
 
-// export default function Logout() {
-//     const navigate = useNavigate();
-//     const { logoutSubmitHandler } = useContext(AuthContext);
+export default function Logout() {
+    const navigate = useNavigate();
+    const { logoutSubmitHandler } = useContext(AuthContext);
 
-//     return(
-//         navigate(Path.Home)
-//     )
-// };
+    useEffect(() => {
+        authService.logout()
+            .then(() => {
+                logoutSubmitHandler();
+                navigate(Path.Home);
+            })
+            .catch(() => navigate(Path.Home));
+    }, []);
+ 
+    return null;
+};

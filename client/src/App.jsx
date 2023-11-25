@@ -19,9 +19,13 @@ import Logout from './components/Logout/Logout';
 
 
 function App() {
-    const [auth, setAuth] = useState({});
     const navigate = useNavigate();
+    const [auth, setAuth] = useState(() => {
+        localStorage.removeItem('accessToken');
 
+        return {};
+    });
+    
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -42,6 +46,8 @@ function App() {
 
         setAuth(result);
 
+        localStorage.setItem('accessToken', result.accessToken);
+
         navigate(Path.Home);
     };
 
@@ -54,21 +60,25 @@ function App() {
 
         setAuth(result);
 
+        localStorage.setItem('accessToken', result.accessToken);
+
         navigate(Path.Home);
     };
 
-    // const logoutSubmitHandler = async () => {
-    //     result = await authService.logout();
+    const logoutSubmitHandler = async () => {
 
-    //     navigate(Path.Home);
-    // };
+        setAuth({});
+
+        localStorage.removeItem('accessToken');
+    };
 
     const values = {
+        logoutSubmitHandler,
         registerSubmitHandler,
         loginSubmitHandler,
-        username: auth.username,
+        username: auth.username || auth.email,
         email: auth.email,
-        isAuthenticated: !!auth.email,
+        isAuthenticated: !!auth.accessToken,
     }
     return (
         <>

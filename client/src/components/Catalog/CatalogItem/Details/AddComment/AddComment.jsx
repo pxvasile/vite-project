@@ -26,7 +26,11 @@ export default function AddComment({
         <>
             <form className="comment-form" onSubmit={addCommentHandler}>
                 <h2>Add new comment:</h2>
-                <input type="text" name="username" placeholder="Username..." />
+                <input 
+                    type="text" 
+                    name="username" 
+                    placeholder="Username..." 
+                />
                 <textarea name="comment" placeholder="Comment......"></textarea>
                 <input className="comment-button" type="submit" value="Add Comment" />
             </form>

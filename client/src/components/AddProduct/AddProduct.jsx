@@ -30,7 +30,13 @@ export default function AddProduct({
                 <h2>ADD Product</h2>
 
                 <label htmlFor="productName">Product Name:</label>
-                <input value={values.productName} onChange={onChangeHandler} type="text" id="productName" name="productName" placeholder="Enter Product name here..." /><br />
+                <input 
+                    value={values.productName} 
+                    onChange={onChangeHandler} 
+                    type="text" id="productName" 
+                    name="productName" 
+                    placeholder="Enter Product name here..." 
+                /><br />
 
                 <label htmlFor="category">Category:</label>
                 <input value={values.category} onChange={onChangeHandler} type="text" id="category" name="category" placeholder="Enter Category Here..." /><br />

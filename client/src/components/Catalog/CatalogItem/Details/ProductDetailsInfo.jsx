@@ -17,7 +17,7 @@ export default function ProductDetailsInfo() {
         productService.getOne(productId)
             .then(result => setProductDetails(result));
 
-        commentService.getAll()
+        commentService.getAll(productId)
             .then(setComments);
             
     }, [productId]);

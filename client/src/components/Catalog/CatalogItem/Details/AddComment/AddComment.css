@@ -23,6 +23,11 @@
     margin: 2px;
 }
 
+::placeholder{
+    color: #fa7d09;
+    font-family: Arial;
+}
+
 .comment-form>textarea {
     resize: none;
     width: 470px;

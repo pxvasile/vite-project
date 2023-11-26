@@ -3,11 +3,11 @@
     overflow: hidden;
     padding-bottom: 72px;
     height: auto;
-    width: 48%;
+    width: 66%;
     flex-wrap: wrap;
     justify-content: space-around;
     display: flex;
-    margin-left: 30%;
+    margin-left: 17%;
 }
 
 #product-details>h1 {
@@ -133,24 +133,33 @@
 
 /* Comments CSS */
 .details-comments {
+    width: 100%;
     display: table-cell;
     color: #fff;
 }
 
 .details-comments h2{
     text-align: center;
+    margin-top: 15px;
 }
 
-.info-section>.details-comments li {
-    width: 300px;
+.details-comments li {
+    width: 250px;
     display: inline-block;
     position: static;
-    margin: 20px auto 20px auto;
+    margin: 20px 18px 0px 18px;
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 16px;
-    margin-left: 60px;
     background: #fa7d09;
     color: white;
+}
+
+.details-comments ul {
+    padding: 0;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .comment p {

@@ -1,18 +1,25 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import * as productService from '../../../../services/productService';
+import * as commentService from '../../../../services/commentService';
 
 import './ProductDetailsInfo.css';
 import AddComment from "./AddComment/AddComment";
 
 export default function ProductDetailsInfo() {
     const { productId } = useParams();
+    const [ comments, setComments] = useState([]);
     const [productDetails, setProductDetails] = useState({});
-
+ 
     useEffect(() => {
         productService.getOne(productId)
             .then(result => setProductDetails(result));
+
+        commentService.getAll()
+            .then(setComments);
+            
     }, [productId]);
 
     return (
@@ -35,32 +42,31 @@ export default function ProductDetailsInfo() {
                         to work with an Orc to find a weapon everyone is prepared to kill for.
                     </p>
 
-            {/* Bonus ( for Guests and Users ) */}
-                    <div className="details-comments">
-                        <h2>Comments:</h2>
-                        <ul>
-                    {/* list all comments for current game (If any) */}
-                            <li className="comment">
-                                <p>Content: I rate this one quite highly.</p>
-                            </li>
-                            <li className="comment">
-                                <p>Content: The best game.</p>
-                            </li>
-                        </ul>
-                {/* Display paragraph: If there are no games in the database */}
-                        {/* <p className="no-comment">No comments.</p> */}
-                    </div>
-
             {/* Edit/Delete buttons ( Only for creator of this game ) */}
                     <div className="buttons">
-                        <a href="#" className="button">Edit</a>
-                        <a href="#" className="button">Delete</a>
+                        <Link href="#" className="button">Edit</Link>
+                        <Link href="#" className="button">Delete</Link>
                     </div>
                 </div>
+
+                <div className="details-comments">
+                <h2>Comments:</h2>
+                <ul>
+                    {comments.map((comment) => (
+                        <li key={comment._id} className="comment">
+                            <p>{comment.username}: {comment.text}</p>
+                        </li>
+                    ))}
+                </ul>
+
+                {comments.length === 0 && (
+                    <p className="no-comment">No comments yet!</p>
+                )}
+            </div>
                 
             </section>
 
-            <AddComment />
+        <AddComment setComments={setComments}/>
         </>
     )
 }

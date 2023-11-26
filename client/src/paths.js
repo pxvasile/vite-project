@@ -6,7 +6,7 @@ const Path = {
     Login: '/login',
     Logout: '/logout',
     Register: '/register',
-    ProductDetails: '/catalog/:productId'
+    ProductDetails: '/catalog/:productId',
 };
 
 export default Path;

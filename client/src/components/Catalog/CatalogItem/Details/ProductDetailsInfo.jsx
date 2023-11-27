@@ -66,7 +66,7 @@ export default function ProductDetailsInfo() {
                 
             </section>
 
-        <AddComment setComments={setComments}/>
+        <AddComment setComments={setComments} comments={comments} />
         </>
     )
 }

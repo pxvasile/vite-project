@@ -23,9 +23,6 @@ export default function AddComment({
         setValues(initialValues);
     }
 
-    // const resetCommentHandler = () => {
-
-    // }
 
     const onChangeHandler = (e) => {
         setValues(state => ({...state, [e.target.name]: e.target.value}));

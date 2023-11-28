@@ -1539,34 +1539,30 @@
     		"53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			productName: "Table",
-    			category: "Swedish",
+    			category: "DinningRoom",
     			price: 235,
-    			img: "https://images.woodenstreet.de/image/cache/data%2Fdining-tables%2Ftim-extendable-revised%2Fhoney%2Fupdated%2F1-810x702.jpg",
+    			imageUrl: "/images/Scandinavian-style-oak-dining-table.jpg",
     			material: "PDCH",
     			_createdOn: 1615545143015,
     			_id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
     		},
     		"f5929b5c-bca4-4026-8e6e-c09e73908f77": {
     			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			make: "Sofa",
-    			model: "ES-549-M",
-    			year: 2018,
-    			description: "Three-person sofa, blue",
-    			price: 1200,
-    			img: "./images/sofa.jpg",
-    			material: "Frame - steel, plastic; Upholstery - fabric",
+    			productName: "Desk",
+    			category: "Homemade",
+    			price: 320,
+    			imageUrl: "/images/s1.jpg",
+    			material: "Solid Wood",
     			_createdOn: 1615545572296,
     			_id: "f5929b5c-bca4-4026-8e6e-c09e73908f77"
     		},
     		"c7f51805-242b-45ed-ae3e-80b68605141b": {
     			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			make: "Chair",
-    			model: "Bright Dining Collection",
-    			year: 2017,
-    			description: "Dining chair",
+    			productName: "Desk",
+    			category: "Office",
     			price: 180,
-    			img: "./images/chair.jpg",
-    			material: "Wood laminate; leather",
+    			imageUrl: "./images/desk-masiv.jpg",
+    			material: "MDF",
     			_createdOn: 1615546332126,
     			_id: "c7f51805-242b-45ed-ae3e-80b68605141b"
     		}
@@ -1692,3 +1688,4 @@
     return softuniPracticeServer;
 
 })));
+

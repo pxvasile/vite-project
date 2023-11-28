@@ -13,7 +13,7 @@ export default function CatalogItem({
                 <img src={imageUrl} />
                 <h2>{productName}</h2>
                 <h3>{category}</h3>
-                <Link to={`/catalog/${_id}`} className="details-button">Details</Link>
+                <Link to={`/catalog/${_id}`} className="allProducts-button">Details</Link>
             </div>
         </div>
     )

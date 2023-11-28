@@ -51,7 +51,12 @@ function App() {
         navigate(Path.Home);
     };
 
+
     const registerSubmitHandler = async (values) => {
+        if (values.username.length < 5) {
+            alert("dadad");
+            return;
+        }
         const result = await authService.register(
             values.username,
             values.email,

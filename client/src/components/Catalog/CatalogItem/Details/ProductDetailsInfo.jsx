@@ -10,17 +10,40 @@ import AddComment from "./AddComment/AddComment";
 
 export default function ProductDetailsInfo() {
     const { productId } = useParams();
-    const [ comments, setComments] = useState([]);
+    const [comments, setComments] = useState([]);
     const [productDetails, setProductDetails] = useState({});
- 
+
     useEffect(() => {
         productService.getOne(productId)
             .then(setProductDetails);
 
         commentService.getAll(productId)
             .then(setComments);
-            
+
     }, [productId]);
+
+    const onSubmit = async (e, values, initialValues) => {
+        e.preventDefault();
+
+        values.productId = productDetails._id;
+        
+        await commentService.create(values);
+
+        setComments(state => ([...state, values]));
+        
+        return initialValues = values;
+    }
+    
+    // const addCommentHandler = async ({ productId, username, comment }) => {
+    //     const createdComment = await commentService.create( //try catch
+    //         productId,
+    //         username,
+    //         comment
+    //     );
+
+    //     setComments(state => [...state, createdComment]);
+    // }
+
 
     return (
         <>
@@ -42,7 +65,7 @@ export default function ProductDetailsInfo() {
                         to work with an Orc to find a weapon everyone is prepared to kill for.
                     </p>
 
-            {/* Edit/Delete buttons ( Only for creator of this game ) */}
+                    {/* Edit/Delete buttons ( Only for creator of this game ) */}
                     <div className="buttons">
                         <Link href="#" className="button">Edit</Link>
                         <Link href="#" className="button">Delete</Link>
@@ -50,23 +73,23 @@ export default function ProductDetailsInfo() {
                 </div>
 
                 <div className="details-comments">
-                <h2>Comments:</h2>
-                <ul>
-                    {comments.map((comment) => (
-                        <li key={comment._id} className="comment">
-                            <p>{comment.username}: {comment.comment}</p>
-                        </li>
-                    ))}
-                </ul>
+                    <h2>Comments:</h2>
+                    <ul>
+                        {comments.map((comment) => (
+                            <li key={comment._id} className="comment">
+                                <p>{comment.username}: {comment.comment}</p>
+                            </li>
+                        ))}
+                    </ul>
 
-                {comments.length === 0 && (
-                    <p className="no-comment">No comments yet!</p>
-                )}
-            </div>
-                
+                    {comments.length === 0 && (
+                        <p className="no-comment">No comments yet!</p>
+                    )}
+                </div>
+
             </section>
 
-        <AddComment setComments={setComments} comments={comments} />
+            <AddComment onSubmit={onSubmit} />
         </>
     )
 }

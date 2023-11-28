@@ -10,12 +10,13 @@ export const getAll = async (productId) => {
     const result = await request.get(`${baseUrl}?${query}`);    
 
     // return result.filter(comment => comment.productId === productId)
-    console.log(result);
+console.log(query);
     return result;
 }
 
-export const create = async ( username, comment) => {
+export const create = async ({ productId, username, comment }) => {
     const newComment = await request.post(baseUrl, {
+        productId,
         username,
         comment,
     });

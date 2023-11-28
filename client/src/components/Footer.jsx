@@ -5,7 +5,7 @@ export default function Footer() {
         <>
         <div className="footer-area">
         <div className="logo">
-        <img src="images/footer-logo.png" alt="Footer Logo" />
+        <img src="../images/footer-logo.png" alt="Footer Logo" />
         <div className="copyright">
          <p>
             © 2023 -

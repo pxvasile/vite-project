@@ -5,14 +5,14 @@
 
 .main{
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url("D:\softUni\React JS\Project\vite-project\public\images");
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url("../images/slider-bg.jpg");
     background-position: center;
     background-size: cover;
     height: 93vh;
 }
 
 .main{
-    background: url('./images/slider-bg.jpg') no-repeat center center / cover;
+    background: url('../images/slider-bg.jpg') no-repeat center center / cover;
 }
 
 .navbar{

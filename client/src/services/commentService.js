@@ -1,21 +1,23 @@
 import * as request from './requester';
 
-const baseUrl = 'http://localhost:3030/jsonstore/comments';
+const baseUrl = 'http://localhost:3030/data/comments';
 
 export const getAll = async (productId) => {
     const query = new URLSearchParams({
-        where: `productId="${productId}"`
+        where: `productId="${productId}"`,
+        load: `owner=_ownerId:users`
     })
-    const result = await request.get(`${baseUrl}?${query}`);
+    const result = await request.get(`${baseUrl}?${query}`);    
 
-    return Object.values(result).filter(comment => comment.productId === productId);
+    // return result.filter(comment => comment.productId === productId)
+    console.log(result);
+    return result;
 }
 
-export const create = async (productId, username, text) => {
+export const create = async ( username, comment) => {
     const newComment = await request.post(baseUrl, {
-        productId,
         username,
-        text,
+        comment,
     });
 
     return newComment;

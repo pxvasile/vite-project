@@ -15,7 +15,7 @@ export default function ProductDetailsInfo() {
  
     useEffect(() => {
         productService.getOne(productId)
-            .then(result => setProductDetails(result));
+            .then(setProductDetails);
 
         commentService.getAll(productId)
             .then(setComments);
@@ -54,7 +54,7 @@ export default function ProductDetailsInfo() {
                 <ul>
                     {comments.map((comment) => (
                         <li key={comment._id} className="comment">
-                            <p>{comment.username}: {comment.text}</p>
+                            <p>{comment.username}: {comment.comment}</p>
                         </li>
                     ))}
                 </ul>

@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { useState } from 'react';
 
 import * as commentService from '../../../../../services/commentService';
@@ -7,51 +6,58 @@ import './AddComment.css';
 export default function AddComment({
     setComments
 }) {
-    const { productId } = useParams();
 
-    const [values, setValues] = useState({
+    const initialValues = {
         productId: '',
         username: '',
         comment: '',
-    });
+    }
 
-    const addCommentHandler = async (values) => {
+    const [values, setValues] = useState(initialValues);
 
-        const formData = new FormData(values.currentTarget);
+    const onSubmit = (e) => {
+        e.preventDefault();
 
+        addCommentHandler(values);
+
+        setValues(initialValues);
+    }
+
+    // const resetCommentHandler = () => {
+
+    // }
+
+    const onChangeHandler = (e) => {
+        setValues(state => ({...state, [e.target.name]: e.target.value}));
+    }
+
+    const addCommentHandler = async ({ username, comment }) => {
         const createdComment = await commentService.create( //try catch
-            productId,
-            formData.get('username'),
-            formData.get('comment')
+            username,
+            comment
         );
 
         setComments(state => [...state, createdComment]);
     }
-
-    const onChangeHandler = (e) => {
-        e.preventDefault();
-
-        setValues(state => ({...state, [e.target.name]: e.target.value}));
-    }
-
+    
     return (
         <>
-            <form className="comment-form" onSubmit={addCommentHandler}>
+            <form className="comment-form" onSubmit={onSubmit}>
                 <h2>Add new comment:</h2>
-                <input 
-                    type="text" 
-                    name="username" 
-                    placeholder="Username..." 
-                    value={values.username} 
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username..."
+                    value={values.username}
                     onChange={onChangeHandler}
                 />
-                <textarea 
-                    name="comment" 
+                <textarea
+                    name="comment"
                     placeholder="Comment......"
-                    value={values.comment} 
+                    value={values.comment}
                     onChange={onChangeHandler}
                 />
-                <input className="comment-button" type="submit" value="Add Comment" />
+                <input className="comment-button" type="submit"  value="Add Comment" />
             </form>
         </>
     )

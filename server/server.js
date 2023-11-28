@@ -1535,16 +1535,14 @@
     			_id: "b8608c22-dd57-4b24-948e-b358f536b958"
     		}
     	},
-    	catalog: {
+    	products: {
     		"53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			make: "Table",
-    			model: "Swedish",
-    			year: 2015,
-    			description: "Medium table",
+    			productName: "Table",
+    			category: "Swedish",
     			price: 235,
-    			img: "./images/table.png",
-    			material: "Hardwood",
+    			img: "https://images.woodenstreet.de/image/cache/data%2Fdining-tables%2Ftim-extendable-revised%2Fhoney%2Fupdated%2F1-810x702.jpg",
+    			material: "PDCH",
     			_createdOn: 1615545143015,
     			_id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
     		},

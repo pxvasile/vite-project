@@ -15,12 +15,6 @@ export default function AddComment({
 
     const [values, setValues] = useState(initialValues);
 
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     addCommentHandler(values);
-    // }
-
     const onChangeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }));
     }

@@ -34,17 +34,6 @@ export default function ProductDetailsInfo() {
         return initialValues = values;
     }
     
-    // const addCommentHandler = async ({ productId, username, comment }) => {
-    //     const createdComment = await commentService.create( //try catch
-    //         productId,
-    //         username,
-    //         comment
-    //     );
-
-    //     setComments(state => [...state, createdComment]);
-    // }
-
-
     return (
         <>
             <section id="product-details">

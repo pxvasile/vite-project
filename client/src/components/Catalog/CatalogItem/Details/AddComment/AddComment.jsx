@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import * as commentService from '../../../../../services/commentService';
 import './AddComment.css';
 
 export default function AddComment({
@@ -19,13 +18,9 @@ export default function AddComment({
         setValues(state => ({ ...state, [e.target.name]: e.target.value }));
     }
 
-    const resetHandler = () => {
-        setValues(initialValues);
-    }
-
     return (
         <>
-            <form className="comment-form" onSubmit={(e) => onSubmit(e, values, resetHandler)}>
+            <form className="comment-form" onSubmit={(e) => onSubmit(e, values)}>
                 <h2>Add new comment:</h2>
                 <input
                     type="text"

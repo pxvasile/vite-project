@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -8,9 +8,21 @@ import * as commentService from '../../../../services/commentService';
 import './ProductDetailsInfo.css';
 import AddComment from "./AddComment/AddComment";
 
+const reducer = (state, action) => {
+    switch (action?.type) {
+        case 'GET_ALL_COMMENTS':
+            return [...action.payload];
+        case 'ADD_COMMENT':
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+};
+
 export default function ProductDetailsInfo() {
     const { productId } = useParams();
-    const [comments, setComments] = useState([]);
+    // const [comments, setComments] = useState([]);
+    const [comments, dispatch] = useReducer(reducer, []);
     const [productDetails, setProductDetails] = useState({});
 
     useEffect(() => {
@@ -18,19 +30,29 @@ export default function ProductDetailsInfo() {
             .then(setProductDetails);
 
         commentService.getAll(productId)
-            .then(setComments);
+            .then((result) => {
+                dispatch({
+                    type: 'GET_ALL_COMMENTS',
+                    payload: result,
+                })
+            });
 
     }, [productId]);
 
-    const onSubmit = async (e, values, initialValues) => {
+    const onSubmit = async (e, values) => {
         e.preventDefault();
 
         values.productId = productDetails._id;
         
-        await commentService.create(values);
+        const newComment = await commentService.create(values);
+        console.log(newComment);
+        newComment = { username };
 
-        setComments(state => ([...state, values]));
-        
+        // setComments(state => ([...state, values]));
+        dispatch({
+            type: 'ADD_COMMENT',
+            payload: newComment,
+        })
     }
     
     return (
@@ -63,7 +85,7 @@ export default function ProductDetailsInfo() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {comments.map(({ _id, username, comment }) => (
+                        {comments.map(({ _id, owner: { username }, comment}) => (
                             <li key={_id} className="comment">
                                 <p>{username}: {comment}</p>
                             </li>

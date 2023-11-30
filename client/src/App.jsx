@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import * as productService from './services/productService';
 import * as authService from './services/authService';
-import AuthContext from './contexts/authContext';
+import { AuthProvider } from './contexts/authContext';
 import Path from './paths';
 
 import Header from './components/Header/Header';
@@ -87,7 +87,7 @@ function App() {
     }
     return (
         <>
-            <AuthContext.Provider value={values}>
+            <AuthProvider value={values}>
                 <div className="main">
                     <Header />
 
@@ -103,7 +103,7 @@ function App() {
                     </Routes>
                 </div>
                 <Footer />
-            </AuthContext.Provider>
+            </AuthProvider>
         </>
     )
 }

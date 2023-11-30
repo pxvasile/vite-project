@@ -1,9 +1,19 @@
+import { useState } from 'react';
+
+import * as productService from '../../services/productService';
+
 import CatalogItem from "./CatalogItem/CatalogItem";
 import './Catalog.css';
 
-export default function Catalog({
-    products
-}) {
+export default function Catalog() {
+    
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        productService.getAll()
+            .then(result => setProducts(result));
+    }, []);
+
     return (
         <>
             <div className="catalogHead">

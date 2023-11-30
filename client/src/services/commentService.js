@@ -10,7 +10,6 @@ export const getAll = async (productId) => {
     const result = await request.get(`${baseUrl}?${query}`);    
 
     // return result.filter(comment => comment.productId === productId)
-console.log(query);
     return result;
 }
 

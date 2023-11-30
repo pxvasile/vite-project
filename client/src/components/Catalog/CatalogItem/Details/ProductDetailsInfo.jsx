@@ -31,7 +31,6 @@ export default function ProductDetailsInfo() {
 
         setComments(state => ([...state, values]));
         
-        return initialValues = values;
     }
     
     return (
@@ -64,9 +63,9 @@ export default function ProductDetailsInfo() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {comments.map((comment) => (
-                            <li key={comment._id} className="comment">
-                                <p>{comment.username}: {comment.comment}</p>
+                        {comments.map(({ _id, username, comment }) => (
+                            <li key={_id} className="comment">
+                                <p>{username}: {comment}</p>
                             </li>
                         ))}
                     </ul>

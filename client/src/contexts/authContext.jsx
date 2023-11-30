@@ -1,8 +1,11 @@
-import { createContext,useState, useEffect } from "react";
+import { createContext } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import * as productService from '../services/productService';
 import * as authService from '../services/authService';
+
+import Path from '../paths';
+import usePersistedState from "../hooks/usePersistedState";
 
 const AuthContext = createContext();
 
@@ -11,11 +14,7 @@ export const AuthProvider = ({
 }) => {
 
     const navigate = useNavigate();
-    const [auth, setAuth] = useState(() => {
-        localStorage.removeItem('accessToken');
-
-        return {};
-    });
+    const [auth, setAuth] = usePersistedState('auth', {});
 
     const onAddProductSubmit = async (data) => {
         const newProduct = await productService.create(data);

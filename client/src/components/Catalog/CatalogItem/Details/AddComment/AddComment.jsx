@@ -19,9 +19,13 @@ export default function AddComment({
         setValues(state => ({ ...state, [e.target.name]: e.target.value }));
     }
 
+    const resetHandler = () => {
+        setValues(initialValues);
+    }
+
     return (
         <>
-            <form className="comment-form" onSubmit={(e) => onSubmit(e, values, setValues(initialValues))}>
+            <form className="comment-form" onSubmit={(e) => onSubmit(e, values, resetHandler)}>
                 <h2>Add new comment:</h2>
                 <input
                     type="text"

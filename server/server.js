@@ -1561,7 +1561,7 @@
     			productName: "Desk",
     			category: "Office",
     			price: 180,
-    			imageUrl: "./images/desk-masiv.jpg",
+    			imageUrl: "/images/desk-masiv.jpg",
     			material: "MDF",
     			_createdOn: 1615546332126,
     			_id: "c7f51805-242b-45ed-ae3e-80b68605141b"

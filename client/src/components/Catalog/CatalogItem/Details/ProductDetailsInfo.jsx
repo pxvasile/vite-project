@@ -1,12 +1,13 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useState, useEffect, useReducer, useContext } from 'react';
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import * as productService from '../../../../services/productService';
 import * as commentService from '../../../../services/commentService';
 
-import './ProductDetailsInfo.css';
+import AuthContext from '../../../../contexts/authContext';
 import AddComment from "./AddComment/AddComment";
+import './ProductDetailsInfo.css';
 
 const reducer = (state, action) => {
     switch (action?.type) {
@@ -20,6 +21,7 @@ const reducer = (state, action) => {
 };
 
 export default function ProductDetailsInfo() {
+    const { username, userId } = useContext(AuthContext);
     const { productId } = useParams();
     // const [comments, setComments] = useState([]);
     const [comments, dispatch] = useReducer(reducer, []);
@@ -36,17 +38,16 @@ export default function ProductDetailsInfo() {
                     payload: result,
                 })
             });
-
     }, [productId]);
 
     const onSubmit = async (e, values) => {
         e.preventDefault();
 
         values.productId = productDetails._id;
-        
+        values.username = username;
+
         const newComment = await commentService.create(values);
-        console.log(newComment);
-        newComment = { username };
+        // newComment.username = username;
 
         // setComments(state => ([...state, values]));
         dispatch({
@@ -85,7 +86,7 @@ export default function ProductDetailsInfo() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {comments.map(({ _id, owner: { username }, comment}) => (
+                        {comments.map(({ _id, username , comment}) => (
                             <li key={_id} className="comment">
                                 <p>{username}: {comment}</p>
                             </li>

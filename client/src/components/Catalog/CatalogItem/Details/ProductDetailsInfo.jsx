@@ -32,7 +32,6 @@ export default function ProductDetailsInfo() {
     }, [productId]);
 
     const addCommentHandler = async (values) => {
-
         values.productId = productDetails._id;
         values.username = username;
 
@@ -43,6 +42,7 @@ export default function ProductDetailsInfo() {
             type: 'ADD_COMMENT',
             payload: newComment,
         });
+
     };
 
     return (
@@ -65,17 +65,17 @@ export default function ProductDetailsInfo() {
                         to work with an Orc to find a weapon everyone is prepared to kill for.
                     </p>
 
-                    {/* Edit/Delete buttons ( Only for creator of this game ) */}
-                    <div className="buttons">
-                        <Link href="#" className="button">Edit</Link>
-                        <Link href="#" className="button">Delete</Link>
-                    </div>
+                    {userId === productDetails._ownerId && (<div className="buttons">
+                        <Link to={Path.ProductDetailsEdit} className="button">Edit</Link>
+                        <Link to={Path.Delete} className="button">Delete</Link>
+                    </div>)}
+
                 </div>
 
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {comments.map(({ _id, username, comment}) => (
+                        {comments.map(({ _id, username, comment }) => (
                             <li key={_id} className="comment">
                                 <p>{username}: {comment}</p>
                             </li>

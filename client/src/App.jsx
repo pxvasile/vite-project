@@ -13,7 +13,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/ProductDetailsInfo';
 import Logout from './components/Logout/Logout';
-
+import ProductDetailsEdit from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/ProductDetailsEdit';
 
 function App() {
 
@@ -32,6 +32,7 @@ function App() {
                         <Route path={Path.Logout} element={<Logout />} />
                         <Route path={Path.Register} element={<Register />} />
                         <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />
+                        <Route path={Path.ProductDetailsEdit} element={<ProductDetailsEdit />} />
                     </Routes>
                 </div>
                 <Footer />

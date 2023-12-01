@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
+import useForm from '../../../../../hooks/useForm';
 import './AddComment.css';
 
 export default function AddComment({
-    onSubmit,
+    addCommentHandler,
 }) {
 
     const initialValues = {
@@ -12,15 +13,17 @@ export default function AddComment({
         comment: '',
     }
 
-    const [values, setValues] = useState(initialValues);
+    const { values, onChange, onSubmit } = useForm(addCommentHandler, initialValues);
 
-    const onChangeHandler = (e) => {
-        setValues(state => ({ ...state, [e.target.name]: e.target.value }));
-    }
+    // const [values, setValues] = useState(initialValues);
+
+    // const onChangeHandler = (e) => {
+    //     setValues(state => ({ ...state, [e.target.name]: e.target.value }));
+    // }
 
     return (
         <>
-            <form className="comment-form" onSubmit={(e) => onSubmit(e, values)}>
+            <form className="comment-form" onSubmit={onSubmit}>
                 <h2>Add new comment:</h2>
                 {/* <input
                     type="text"
@@ -33,7 +36,7 @@ export default function AddComment({
                     name="comment"
                     placeholder="Comment......"
                     value={values.comment}
-                    onChange={onChangeHandler}
+                    onChange={onChange}
                 />
                 <input className="comment-button" type="submit" value="Add Comment" />
             </form>

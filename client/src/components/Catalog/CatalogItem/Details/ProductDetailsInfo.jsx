@@ -7,18 +7,8 @@ import * as commentService from '../../../../services/commentService';
 
 import AuthContext from '../../../../contexts/authContext';
 import AddComment from "./AddComment/AddComment";
+import reducer from './AddComment/commentReducer';
 import './ProductDetailsInfo.css';
-
-const reducer = (state, action) => {
-    switch (action?.type) {
-        case 'GET_ALL_COMMENTS':
-            return [...action.payload];
-        case 'ADD_COMMENT':
-            return [...state, action.payload];
-        default:
-            return state;
-    }
-};
 
 export default function ProductDetailsInfo() {
     const { username, userId } = useContext(AuthContext);
@@ -26,6 +16,7 @@ export default function ProductDetailsInfo() {
     // const [comments, setComments] = useState([]);
     const [comments, dispatch] = useReducer(reducer, []);
     const [productDetails, setProductDetails] = useState({});
+
 
     useEffect(() => {
         productService.getOne(productId)
@@ -36,26 +27,24 @@ export default function ProductDetailsInfo() {
                 dispatch({
                     type: 'GET_ALL_COMMENTS',
                     payload: result,
-                })
+                });
             });
     }, [productId]);
 
-    const onSubmit = async (e, values) => {
-        e.preventDefault();
+    const addCommentHandler = async (values) => {
 
         values.productId = productDetails._id;
         values.username = username;
 
         const newComment = await commentService.create(values);
         // newComment.username = username;
-
         // setComments(state => ([...state, values]));
         dispatch({
             type: 'ADD_COMMENT',
             payload: newComment,
-        })
-    }
-    
+        });
+    };
+
     return (
         <>
             <section id="product-details">
@@ -86,7 +75,7 @@ export default function ProductDetailsInfo() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {comments.map(({ _id, username , comment}) => (
+                        {comments.map(({ _id, username, comment}) => (
                             <li key={_id} className="comment">
                                 <p>{username}: {comment}</p>
                             </li>
@@ -100,7 +89,7 @@ export default function ProductDetailsInfo() {
 
             </section>
 
-            <AddComment onSubmit={onSubmit} />
+            <AddComment addCommentHandler={addCommentHandler} />
         </>
     )
 }

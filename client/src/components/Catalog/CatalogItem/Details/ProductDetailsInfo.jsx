@@ -8,6 +8,7 @@ import * as commentService from '../../../../services/commentService';
 import AuthContext from '../../../../contexts/authContext';
 import AddComment from "./AddComment/AddComment";
 import reducer from './AddComment/commentReducer';
+import Path from '../../../../paths';
 import './ProductDetailsInfo.css';
 
 export default function ProductDetailsInfo() {
@@ -58,13 +59,9 @@ export default function ProductDetailsInfo() {
                         creatures live side by side with humans. A human cop is forced
                         to work with an Orc to find a weapon everyone is prepared to kill for.
                     </p>
-                    {/* Edit/Delete buttons ( Only for creator of this game ) */}
-                    <div className="buttons">
-                        <Link href="#" className="button">Edit</Link>
-                        <Link href="#" className="button">Delete</Link>
-                    </div>
+
                     {userId === productDetails._ownerId && (<div className="buttons">
-                        <Link to={Path.ProductDetailsEdit} className="button">Edit</Link>
+                        <Link to={`/catalog/${productId}/edit`} className="button">Edit</Link>
                         <Link to={Path.Delete} className="button">Delete</Link>
                     </div>)}
                 </div>

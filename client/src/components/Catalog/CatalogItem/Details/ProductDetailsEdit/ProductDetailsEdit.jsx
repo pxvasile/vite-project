@@ -1,19 +1,43 @@
-export default function ProductDetailsEdit() {
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
+import * as productService from '../../../../../services/productService';
+import './ProductDetailsEdit.css';
+
+export default function ProductDetailsEdit({
+}) {
+    
+    const navigate = useNavigate();
+    const { productId } = useParams();
     const [values, setValues] = useState({
         productName: '',
         category: '',
         price: '',
         imageUrl: '',
-        material: ''
+        material: ''  
     });
+
+    useEffect(() => {
+        productService.getOne(productId)
+            .then(result => {
+                setValues(result);
+            })
+    }, [productId]);
 
     const onChangeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }));
     }
 
+    const onEditProductSubmit = async (values) => {
+        const newProduct = await productService.edit(values._id, values);
+
+        setValues(state => [...state, newProduct]);
+
+        navigate(`/catalog/${productId}`);
+    }
+
     const onSubmit = (e) => {
-        e.preventDefault(),
+        e.preventDefault()
 
         onEditProductSubmit(values);
     }

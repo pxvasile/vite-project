@@ -60,16 +60,7 @@ export const AuthProvider = ({
         localStorage.removeItem('accessToken');
     };
 
-    const onEditProductSubmit = async (productId, data) => {
-        const newProduct = await productService.edit(data);
-
-        setProducts(state => [...state, newProduct]);
-
-        navigate("/catalog");
-    }
-
     const values = {
-        onEditProductSubmit,
         onAddProductSubmit,
         logoutSubmitHandler,
         registerSubmitHandler,
@@ -81,7 +72,7 @@ export const AuthProvider = ({
     }
 
     return (
-        <AuthContext.Provider value={values}>
+        <AuthContext.Provider value={values} >
             {children}
         </AuthContext.Provider>
     );

@@ -1,0 +1,115 @@
+.form {
+    width: 25rem;
+    height: 29rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+    position: absolute;
+    left: 42%;
+    transform: translate(0%, -5%);
+    border-radius: 0.625rem;
+    padding: 1.5625rem;
+    margin-top: 3.3%;
+
+}
+
+.form h2 {
+    width: 400px;
+    height: 40px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #fa7d09;
+    font-size: 22px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-top: 12px;
+    margin: 2px;
+}
+
+.form input {
+    width: fit-content;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #fa7d09;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+.form label {
+    width: 400px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #fa7d09;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 9px;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #fff;
+    font-family: Arial;
+}
+
+.btnn {
+    width: 240px;
+    height: 40px;
+    background: #ff7200;
+    font-weight: bold;
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+    margin-left: 20%;
+}
+
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+}
+
+#material {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+#category {
+    padding-bottom: 1px;
+    padding-right: 45px;
+}
+
+#price {
+    padding-bottom: 0.5px;
+    padding-right: 80px;
+}
+
+#imageUrl {
+    padding-bottom: 1px;
+    padding-right: 80px;
+}
+
+.labelm {
+    margin-right: 10px;
+    margin-left: 40px;
+}

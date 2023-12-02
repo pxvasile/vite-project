@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 
 import useForm from '../../../../../hooks/useForm';
 import './AddComment.css';
@@ -7,11 +7,11 @@ export default function AddComment({
     addCommentHandler,
 }) {
 
-    const initialValues = {
+    const initialValues = useMemo(() => ({
         productId: '',
         username: '',
         comment: '',
-    }
+    }), [])
 
     const { values, onChange, onSubmit } = useForm(addCommentHandler, initialValues);
 

@@ -15,12 +15,12 @@ export default function ProductDetailsEdit() {
     const onSubmit = (e) => {
         e.preventDefault(),
 
-            onAddProductSubmit(values);
+        onEditProductSubmit(values);
     }
     return (
         <form id="add" onSubmit={onSubmit}>
             <div className="form">
-                <h2>ADD Product</h2>
+                <h2>EDIT Product</h2>
 
                 <label htmlFor="productName">Product Name:</label>
                 <input
@@ -46,7 +46,7 @@ export default function ProductDetailsEdit() {
                     <option value="pdch">PDCH</option>
                     <option value="solid-wood">Solid Wood</option>
                 </select>
-                <button type="submit" className="btnn" value="ADD Product">ADD PRODUCT</button>
+                <button type="submit" className="btnn" value="Edit Product">EDIT PRODUCT</button>
             </div>
         </form>
     )

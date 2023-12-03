@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer, useContext } from 'react';
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import * as productService from '../../../../services/productService';
@@ -13,7 +13,6 @@ import './ProductDetailsInfo.css';
 export default function ProductDetailsInfo() {
     const { username, userId } = useContext(AuthContext);
     const { productId } = useParams();
-    const navigate = useNavigate();
     // const [comments, setComments] = useState([]);
     const [comments, dispatch] = useReducer(reducer, []);
     const [productDetails, setProductDetails] = useState({});

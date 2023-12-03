@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import * as productService from '../services/productService';
@@ -15,7 +15,13 @@ export const AuthProvider = ({
 
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
+    const [products, setProducts] = useState([]);
 
+    useEffect(() => {
+        productService.getAll()
+            .then(result => setProducts(result));
+    }, []);
+    
     const onAddProductSubmit = async (data) => {
         const newProduct = await productService.create(data);
 
@@ -70,6 +76,7 @@ export const AuthProvider = ({
         registerSubmitHandler,
         loginSubmitHandler,
         deleteProduct,
+        products,
         username: auth.username || auth.email,
         email: auth.email,
         userId: auth._id,

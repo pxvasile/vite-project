@@ -15,6 +15,7 @@ import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/Product
 import Logout from './components/Logout/Logout';
 import ProductDetailsEdit from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/ProductDetailsEdit';
 import DeleteModal from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/DeleteModal/DeleteModal';
+import AuthGuard from './guards/AuthGuard';
 
 function App() {
 
@@ -27,14 +28,17 @@ function App() {
                     <Routes>
                         <Route path={Path.Home} element={<Home />} />
                         <Route path={Path.Catalog} element={<Catalog />} />
-                        <Route path={Path.AddProduct} element={<AddProduct />} />
                         <Route path={Path.AboutUs} element={<AboutUs />} />
                         <Route path={Path.Login} element={<Login />} />
-                        <Route path={Path.Logout} element={<Logout />} />
                         <Route path={Path.Register} element={<Register />} />
                         <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />
-                        <Route path={Path.ProductDetailsEdit} element={<ProductDetailsEdit />} />
-                        <Route path={Path.DeleteModal} element={<DeleteModal />} />
+
+                        <Route element={<AuthGuard />}>
+                            <Route path={Path.AddProduct} element={<AddProduct />} />   
+                            <Route path={Path.Logout} element={<Logout />} />
+                            <Route path={Path.ProductDetailsEdit} element={<ProductDetailsEdit />} />
+                            <Route path={Path.DeleteModal} element={<DeleteModal />} />
+                        </Route>
                     </Routes>
                 </div>
                 <Footer />  

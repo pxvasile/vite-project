@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import './AddProduct.css';
 
-export default function AddProduct({
-    onAddProductSubmit,
-}) {
+import AuthContext from '../../contexts/authContext';
 
+export default function AddProduct() {
+    const { onAddProductSubmit } = useContext(AuthContext);
     const [values, setValues] = useState({
         productName: '',
         category: '',

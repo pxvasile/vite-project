@@ -2,25 +2,21 @@
 
 WOODWORLD project is a web aplication for small caprenter company that presents itself, ts products and skills. It is an web application(Single Page Application) using React.js.
 
-## Table of Contents
-
+## Documentation
  - [Project intention](#project-intention)
-
- - [Application Structure](#Application-Structure)
-    - [Public Part (Accessible without authentication)](#public-part)
-    - [Private Part (Available for Registered Users)](#private-part)
- - [General functionality](#general-functionality)
+ - [Application Structure](#application-structure)
+    - [ Public Part (Accessible without authentication) ](#public-part)
+    - [ Private Part (Available for Registered Users) ](#private-part)
+ - [General functionality](#general)
     
-
 ##  Project intention
-   ### The application have:
 
+## Application Structure:
 - Public Part (Accessible without authentication)
     - The public part of project is visible without authentication. This public part is start page, catalog page, the user login and user registration forms, search bar and etc.
-
 - Private Part (Available for Registered Users)
     - Registered users have a personal area in the web application accessible after successful login. This area contains the user's profiles management functionality, the user's offers in a bid system, the user's posts in comments, the user's photos in a photo-sharing system, the user's contacts in a social network, etc.
-
+    - 
 ## General functionality
 
 Web application uses the following technologies, frameworks, and development techniques:
@@ -52,7 +48,3 @@ Web application uses the following technologies, frameworks, and development tec
 - The application is divided into components with separate CSS files
 
 - Using of programming concepts - React Hooks, Context API
-
-- Demonstrating use of programming concepts, specific to the React library: stateless and state full components, bound forms, synthetic events, Component Styling, etc.
-
-- Using a source control system - `GitHub`

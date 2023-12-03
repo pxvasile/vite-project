@@ -37,7 +37,7 @@ function App() {
                             <Route path={Path.AddProduct} element={<AddProduct />} />   
                             <Route path={Path.Logout} element={<Logout />} />
                             <Route path={Path.ProductDetailsEdit} element={<ProductDetailsEdit />} />
-                            <Route path={Path.DeleteModal} element={<DeleteModal />} />
+                            {/* <Route path={Path.DeleteModal} element={<DeleteModal />} /> */}
                         </Route>
                     </Routes>
                 </div>

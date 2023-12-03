@@ -21,7 +21,7 @@ export const AuthProvider = ({
         productService.getAll()
             .then(result => setProducts(result));
     }, []);
-    
+
     const onAddProductSubmit = async (data) => {
         const newProduct = await productService.create(data);
 
@@ -42,21 +42,36 @@ export const AuthProvider = ({
 
 
     const registerSubmitHandler = async (values) => {
-        if (values.username.length < 5) {
-            alert("dadad");
-            return;
-        }
-        const result = await authService.register(
-            values.username,
-            values.email,
-            values.password
-        )
+       
+        // try {
+        //     if (values.username.length < 3) {
+        //         alert("Username is too short!");
+        //     } 
+        //     if (values.username === "" || values.email === "" || values.password === "" || values.repass === "") {
+        //         alert("All fields are required!")
+        //     }
+        //     if (values.password.length < 5) {
+        //         alert('Passwords is too weak and must be at least 5 characters long');
+        //     }
+        //     if (values.password != values.repass) {
+        //         alert('Passwords dont\'t match');
+        //     }
 
-        setAuth(result);
+                const result = await authService.register(
+                    values.username,
+                    values.email,
+                    values.password
+                )
 
-        localStorage.setItem('accessToken', result.accessToken);
+                setAuth(result);
 
-        navigate(Path.Home);
+                localStorage.setItem('accessToken', result.accessToken);
+
+                navigate(Path.Home);
+
+        // } catch (error) {
+        //     console.log(error);
+        // }
     };
 
     const logoutSubmitHandler = async () => {

@@ -29,6 +29,8 @@ export default function Login() {
                     onChange={onChange}
                     value={values[LoginFormKeys.Email]}
                 />
+                {/* {errors.name && <p style={{color: red}}>{errors.name}</p>} */}
+
                 <input 
                     type="password" 
                     name={LoginFormKeys.Password} 

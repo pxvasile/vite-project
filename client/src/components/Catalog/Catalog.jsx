@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 
 import CatalogItem from "./CatalogItem/CatalogItem";
-import './Catalog.css';
 import AuthContext from '../../contexts/authContext';
+
+import './Catalog.css';
 
 export default function Catalog() {
     const { products } = useContext(AuthContext);

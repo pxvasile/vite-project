@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer, useContext } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import * as productService from '../../../../services/productService';
@@ -8,12 +8,12 @@ import * as commentService from '../../../../services/commentService';
 import AuthContext from '../../../../contexts/authContext';
 import AddComment from "./AddComment/AddComment";
 import reducer from './AddComment/commentReducer';
-import Path from '../../../../paths';
 import './ProductDetailsInfo.css';
 
 export default function ProductDetailsInfo() {
     const { username, userId } = useContext(AuthContext);
     const { productId } = useParams();
+    const navigate = useNavigate();
     // const [comments, setComments] = useState([]);
     const [comments, dispatch] = useReducer(reducer, []);
     const [productDetails, setProductDetails] = useState({});
@@ -62,7 +62,7 @@ export default function ProductDetailsInfo() {
 
                     {userId === productDetails._ownerId && (<div className="buttons">
                         <Link to={`/catalog/${productId}/edit`} className="button">Edit</Link>
-                        <Link to={Path.Delete} className="button">Delete</Link>
+                        <Link to={`/catalog/${productId}/delete`} className="button">Delete</Link>
                     </div>)}
                 </div>
                 <div className="details-comments">

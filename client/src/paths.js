@@ -8,7 +8,7 @@ const Path = {
     Register: '/register',
     ProductDetails: '/catalog/:productId',
     ProductDetailsEdit: '/catalog/:productId/edit',
-    Delete: '/catalog/:productId/delete',
+    DeleteModal: '/catalog/:productId/delete',
 };
 
 export default Path;

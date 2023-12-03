@@ -14,6 +14,7 @@ import Register from './components/Register/Register';
 import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/ProductDetailsInfo';
 import Logout from './components/Logout/Logout';
 import ProductDetailsEdit from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/ProductDetailsEdit';
+import DeleteModal from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/DeleteModal/DeleteModal';
 
 function App() {
 
@@ -33,9 +34,10 @@ function App() {
                         <Route path={Path.Register} element={<Register />} />
                         <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />
                         <Route path={Path.ProductDetailsEdit} element={<ProductDetailsEdit />} />
+                        <Route path={Path.DeleteModal} element={<DeleteModal />} />
                     </Routes>
                 </div>
-                <Footer />
+                <Footer />  
             </AuthProvider>
         </>
     )

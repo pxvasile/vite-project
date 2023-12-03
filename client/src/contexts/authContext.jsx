@@ -60,11 +60,16 @@ export const AuthProvider = ({
         localStorage.removeItem('accessToken');
     };
 
+    const deleteProduct = (productId) => {
+        return productService.find(product => product._id === productId);
+    }
+
     const values = {
         onAddProductSubmit,
         logoutSubmitHandler,
         registerSubmitHandler,
         loginSubmitHandler,
+        deleteProduct,
         username: auth.username || auth.email,
         email: auth.email,
         userId: auth._id,

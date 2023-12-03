@@ -5,6 +5,7 @@ import AuthContext from '../../contexts/authContext';
 
 export default function AddProduct() {
     const { onAddProductSubmit } = useContext(AuthContext);
+    const [errors, setErrors] = useState({});
     const [values, setValues] = useState({
         productName: '',
         category: '',
@@ -18,8 +19,11 @@ export default function AddProduct() {
     }
 
     const onSubmit = (e) => {
-        e.preventDefault(),
-
+        e.preventDefault();
+        // if(values.productName.length < 5) {
+        //     alert('Username is too short!');
+        //     return;
+        // }
         onAddProductSubmit(values);
     }
 

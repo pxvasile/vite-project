@@ -61,7 +61,7 @@ export default function ProductDetailsInfo() {
 
                     {userId === productDetails._ownerId && (<div className="buttons">
                         <Link to={`/catalog/${productId}/edit`} className="button">Edit</Link>
-                        {/* <Link to={`/catalog/${productId}/delete`} className="button">Delete</Link> */}
+                        <Link to={`/catalog/${productId}/delete`} className="button">Delete</Link>
                     </div>)}
                 </div>
                 <div className="details-comments">

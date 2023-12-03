@@ -1,29 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import * as productService from '../../../../../../services/productService';
+import AuthContext from "../../../../../../contexts/authContext";
 
 import './DeleteModal.css';
 
-export default function Modal({
-  deleteProduct,
-}) {
-
+export default function Modal() {
+  const { confirmClickHandler } = useContext(AuthContext);
   const navigate = useNavigate();
   const { productId } = useParams();
-  const [modalOpen, setModalOpen] = useState(false);
 
   const backClickHandler = () => {
     navigate(`/catalog/${productId}`);
   }
 
-  const confirmClickHandler = async () => {
-    const result = await productService.delete(productId);
-    console.log(result);
-    deleteProduct(productId);
-
-    navigate('/catalog');
-  }
 
   return (
     <div className="modal">
@@ -31,7 +22,7 @@ export default function Modal({
             <h1>Are You Sure You Want to Delete?</h1>
 
             <button onClick={backClickHandler} className="cancelBtn1">No</button>
-            <button onClick={confirmClickHandler} className="cancelBtn2">Yes</button>
+            <button onClick={() => confirmClickHandler(productId)} className="cancelBtn2">Yes</button>
           </div>
         </div>
   )

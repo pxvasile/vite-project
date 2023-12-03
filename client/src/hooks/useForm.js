@@ -10,12 +10,11 @@ export default function useForm(submitHandler, initialValues) {
             ...state,
             [e.target.name]: e.target.value
         }))
-        setErrors(Validation(values));
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
-  
+        // setErrors(Validation(values)); 
         submitHandler(values);
         
         setValues(initialValues);

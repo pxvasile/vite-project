@@ -40,10 +40,7 @@ export const AuthProvider = ({
         navigate(Path.Home);
     };
 
-
     const registerSubmitHandler = async (values) => {
-       
-        // try {
         //     if (values.username.length < 3) {
         //         alert("Username is too short!");
         //     } 
@@ -56,22 +53,22 @@ export const AuthProvider = ({
         //     if (values.password != values.repass) {
         //         alert('Passwords dont\'t match');
         //     }
+        try {
+            const result = await authService.register(
+                values.username,
+                values.email,
+                values.password
+            )
 
-                const result = await authService.register(
-                    values.username,
-                    values.email,
-                    values.password
-                )
+            setAuth(result);
 
-                setAuth(result);
+            localStorage.setItem('accessToken', result.accessToken);
 
-                localStorage.setItem('accessToken', result.accessToken);
+            navigate(Path.Home);
 
-                navigate(Path.Home);
-
-        // } catch (error) {
-        //     console.log(error);
-        // }
+        } catch (error) {
+            alert(error.message)
+        }
     };
 
     const logoutSubmitHandler = async () => {
@@ -81,20 +78,27 @@ export const AuthProvider = ({
         localStorage.removeItem('accessToken');
     };
 
-    const deleteProduct = (productId) => {
-        return productService.find(product => product._id === productId);
-    }
+    const confirmClickHandler = async (productId) => {
+        const result = await productService.remove(productId);
+     
+        setProducts(state => state.filter(x => x._id !== productId));
+        navigate('/catalog');
+      }
+    // const deleteProduct = (productId) => {
+    //     return productService.find(product => product._id === productId);
+    // }
 
     const values = {
         onAddProductSubmit,
         logoutSubmitHandler,
         registerSubmitHandler,
         loginSubmitHandler,
-        deleteProduct,
+        confirmClickHandler,
         products,
         username: auth.username || auth.email,
         email: auth.email,
         userId: auth._id,
+        accessToken: auth.accessToken,
         isAuthenticated: !!auth.accessToken,
     }
 

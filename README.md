@@ -4,12 +4,12 @@ WOODWORLD project is a web aplication for small caprenter company that presents 
 
 ## Table of Contents
 
- - [Project intention](#Project)
+ - [Project intention](#project-intention)
 
  - [Application Structure](#application-structure)
-    - [ Public Part (Accessible without authentication) ](##public-part)
-    - [ Private Part (Available for Registered Users) ](##private-part)
- - [General functionality](#general)
+    - [ Public Part (Accessible without authentication) ](#public-part)
+    - [ Private Part (Available for Registered Users) ](#private-part)
+ - [General functionality](#general-functionality)
     
 
 ##  Project intention

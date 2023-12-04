@@ -16,6 +16,7 @@ import Logout from './components/Logout/Logout';
 import ProductDetailsEdit from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/ProductDetailsEdit';
 import DeleteModal from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/DeleteModal/DeleteModal';
 import AuthGuard from './guards/AuthGuard';
+import ContactUs from './components/ContactUs/ContactUs';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                         <Route path={Path.Home} element={<Home />} />
                         <Route path={Path.Catalog} element={<Catalog />} />
                         <Route path={Path.AboutUs} element={<AboutUs />} />
+                        <Route path={Path.ContactUs} element={<ContactUs />} />
                         <Route path={Path.Login} element={<Login />} />
                         <Route path={Path.Register} element={<Register />} />
                         <Route path={Path.ProductDetails} element={<ProductDetailsInfo />} />

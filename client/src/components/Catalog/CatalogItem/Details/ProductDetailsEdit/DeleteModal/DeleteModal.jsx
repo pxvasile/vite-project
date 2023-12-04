@@ -1,7 +1,6 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import * as productService from '../../../../../../services/productService';
 import AuthContext from "../../../../../../contexts/authContext";
 
 import './DeleteModal.css';
@@ -18,12 +17,12 @@ export default function Modal() {
 
   return (
     <div className="modal">
-          <div className="titleCloseBtn">
-            <h1>Are You Sure You Want to Delete?</h1>
+      <div className="titleCloseBtn">
+        <h1>Are You Sure You Want to Delete?</h1>
 
-            <button onClick={backClickHandler} className="cancelBtn1">No</button>
-            <button onClick={() => confirmClickHandler(productId)} className="cancelBtn2">Yes</button>
-          </div>
-        </div>
+        <button onClick={backClickHandler} className="cancelBtn1">No</button>
+        <button onClick={() => confirmClickHandler(productId)} className="cancelBtn2">Yes</button>
+      </div>
+    </div>
   )
 };

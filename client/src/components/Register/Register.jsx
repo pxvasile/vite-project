@@ -16,7 +16,7 @@ const RegisterFormKeys = {
 
 export default function Register() {
     const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit, errors } = useForm(registerSubmitHandler, {
+    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
         [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Password]: '',
@@ -34,7 +34,7 @@ export default function Register() {
                     placeholder="Enter Name Here..."
                     value={values[RegisterFormKeys.Username]}
                 />
-                {errors.username && (<p style={{color: "red"}}>{errors.username}</p>)}
+
                 <input 
                     type="email" 
                     name={RegisterFormKeys.Email} 
@@ -42,7 +42,7 @@ export default function Register() {
                     placeholder="Enter Email Here..." 
                     value={values[RegisterFormKeys.Email]}
                 />
-                {errors.email && (<p style={{color: "red"}}>{errors.email}</p>)}
+
                 <input 
                     type="password" 
                     name={RegisterFormKeys.Password} 
@@ -50,7 +50,7 @@ export default function Register() {
                     placeholder="Enter Password Here..." 
                     value={values[RegisterFormKeys.Password]}
                 />
-                {errors.password && (<p style={{color: "red"}}>{errors.password}</p>)}
+
                 <input 
                     type="password" 
                     name={RegisterFormKeys.ConfirmPassword}
@@ -58,7 +58,7 @@ export default function Register() {
                     placeholder="Confirm Password Here..." 
                     value={values[RegisterFormKeys.ConfirmPassword]}
                 />
-                {errors.repass && (<p style={{color: "red"}}>{errors.repass}</p>)}
+
                 <button type="submit" className="form-register-btnn" value="Register">Register</button>
 
                 <p className="link">Have an account

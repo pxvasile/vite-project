@@ -3,6 +3,7 @@ const Path = {
     Catalog: '/catalog',
     AddProduct: '/add-product',
     AboutUs: '/about-us',
+    ContactUs: '/contact-us',
     Login: '/login',
     Logout: '/logout',
     Register: '/register',

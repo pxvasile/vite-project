@@ -4,11 +4,11 @@ import { AuthProvider } from './contexts/authContext';
 import Path from './paths';
 
 import Header from './components/Header/Header';
-import Footer from './components/Footer';
+import Footer from '../src/components/Footer/Footer';
 import Home from './components/Home/Home';
 import Catalog from './components/Catalog/Catalog';
 import AddProduct from './components/AddProduct/AddProduct';
-import AboutUs from './components/AboutUs';
+import AboutUs from '../src/components/AboutUs/AboutUs';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import ProductDetailsInfo from './components/Catalog/CatalogItem/Details/ProductDetailsInfo';

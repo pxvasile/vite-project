@@ -1,9 +1,8 @@
 import { useState } from "react";
-import Validation from "../utils/Validation";
 
 export default function useForm(submitHandler, initialValues) {
     const [values, setValues] = useState(initialValues);
-    const [errors, setErrors] = useState({});
+
 
     const onChange = (e) => {
         setValues(state => ({
@@ -14,7 +13,7 @@ export default function useForm(submitHandler, initialValues) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        // setErrors(Validation(values)); 
+
         submitHandler(values);
         
         setValues(initialValues);
@@ -24,6 +23,5 @@ export default function useForm(submitHandler, initialValues) {
         values,
         onChange,
         onSubmit,
-        errors
     }
 };

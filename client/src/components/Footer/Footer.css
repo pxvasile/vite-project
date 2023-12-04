@@ -1,0 +1,40 @@
+.footer-area {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+}
+
+
+.footer-area .logo {
+	position: relative;
+	margin: 0px 0;
+}
+
+.footer-area .logo img {
+	transition: all 3s;
+	width: 3%;
+	height: auto;
+}
+
+.footer-area .logo img:hover {
+	 transform: rotate(360deg);
+}
+
+
+.footer-area .copyright p{
+	font-size: 13px;
+    color: #000000;
+    letter-spacing: 3px;
+	font-weight: 200;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.footer-area .copyright a{
+	text-decoration: none;
+	font-weight: 300;
+}
+
+.footer-area .copyright a:hover{
+    color: #ff0000;
+}

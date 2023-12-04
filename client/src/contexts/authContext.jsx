@@ -23,41 +23,54 @@ export const AuthProvider = ({
     }, []);
 
     const onAddProductSubmit = async (data) => {
-        const newProduct = await productService.create(data);
 
-        setProducts(state => [...state, newProduct]);
+        try {
+            const newProduct = await productService.create(data);
 
-        navigate("/catalog");
-    }
-
-    const loginSubmitHandler = async (values) => {
-        try{
-            const result = await authService.login(values.email, values.password);
-
-            setAuth(result);
+            setProducts(state => [...state, newProduct]);
     
-            localStorage.setItem('accessToken', result.accessToken);
-    
-            navigate(Path.Home);
+            navigate("/catalog");
         } catch (error) {
             alert(error.message);
         }
 
+    }
+
+    const loginSubmitHandler = async (values) => {
+        if (values.email == "" && values.password == "") {
+            alert("All fields is Required!");
+            return;
+        }
+
+        try {
+            const result = await authService.login(values.email, values.password);
+
+            setAuth(result);
+
+            localStorage.setItem('accessToken', result.accessToken);
+
+            navigate(Path.Home);
+        } catch (error) {
+            alert(error.message);
+        }
     };
 
     const registerSubmitHandler = async (values) => {
-        //     if (values.username.length < 3) {
-        //         alert("Username is too short!");
-        //     } 
-        //     if (values.username === "" || values.email === "" || values.password === "" || values.repass === "") {
-        //         alert("All fields are required!")
-        //     }
-        //     if (values.password.length < 5) {
-        //         alert('Passwords is too weak and must be at least 5 characters long');
-        //     }
-        //     if (values.password != values.repass) {
-        //         alert('Passwords dont\'t match');
-        //     }
+        if (values.username === "" || values.email === "" || values.password === "" || values.repass === "") {
+            alert("All fields are required!");
+            return;
+        }
+        if (values.username.length >= 4 || values.username.length <= 18) {
+            alert("Username should be 3-16 characters!");
+            return;
+        }
+        if (values.password.length < 4) {
+            alert('Passwords is too weak and must be at least 4 characters long');
+        }
+        if (values.password != values.repass) {
+            alert('Passwords dont\'t match');
+            return;
+        }
         try {
             const result = await authService.register(
                 values.username,
@@ -83,12 +96,12 @@ export const AuthProvider = ({
         localStorage.removeItem('accessToken');
     };
 
-    const confirmClickHandler = async (productId) => {
-        const result = await productService.remove(productId);
-     
+    const confirmClickHandler = (productId) => {
+        productService.remove(productId);
+
         setProducts(state => state.filter(x => x._id !== productId));
         navigate('/catalog');
-      }
+    }
     // const deleteProduct = (productId) => {
     //     return productService.find(product => product._id === productId);
     // }

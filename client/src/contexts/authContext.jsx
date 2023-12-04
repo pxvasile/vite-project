@@ -31,13 +31,18 @@ export const AuthProvider = ({
     }
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
+        try{
+            const result = await authService.login(values.email, values.password);
 
-        setAuth(result);
+            setAuth(result);
+    
+            localStorage.setItem('accessToken', result.accessToken);
+    
+            navigate(Path.Home);
+        } catch (error) {
+            alert(error.message);
+        }
 
-        localStorage.setItem('accessToken', result.accessToken);
-
-        navigate(Path.Home);
     };
 
     const registerSubmitHandler = async (values) => {

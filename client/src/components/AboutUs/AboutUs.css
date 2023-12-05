@@ -2,7 +2,7 @@
     background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     overflow: hidden;
     padding-bottom: 72px;
-    height: 680px;
+    height: 600px;
     width: 100%;
     /* text-align: center; */
     display: block;
@@ -11,7 +11,7 @@
 
 .about-container {
     margin: auto;
-    width: 50%;
+    width: 66%;
 }
 
 .about-head h1 {
@@ -22,7 +22,7 @@
     display: block;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .about-content h2 {

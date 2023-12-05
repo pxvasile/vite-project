@@ -40,8 +40,7 @@ export default function Login() {
                 />
                 <button type="submit" className="form-login-btnn" value="Login">Login</button>
 
-                <p className="link">Don't have an account
-                    <Link to={Path.Register}>Sign up here</Link></p>
+                <p className="link">Don't have an account<Link className="link-sign" to={Path.Register}>Sign up here</Link></p>
                 <p className="liw">Log in with</p>
 
                 <div className="icons">

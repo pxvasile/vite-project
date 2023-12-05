@@ -1,7 +1,7 @@
-.form {
+.add-form {
     width: 25rem;
     height: 29rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+    background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     position: absolute;
     left: 42%;
     transform: translate(0%, -5%);
@@ -11,7 +11,7 @@
 
 }
 
-.form h2 {
+.add-form h2 {
     width: 400px;
     height: 40px;
     font-family: sans-serif;
@@ -24,7 +24,7 @@
     margin: 2px;
 }
 
-.form input {
+.add-form input {
     width: fit-content;
     height: 35px;
     background: transparent;
@@ -41,7 +41,7 @@
     margin-top: 30px;
 }
 
-.form label {
+.add-form label {
     width: 400px;
     height: 35px;
     background: transparent;
@@ -58,7 +58,7 @@
     padding-bottom: 9px;
 }
 
-.form input:focus {
+.add-form input:focus {
     outline: none;
 }
 
@@ -87,11 +87,15 @@
     color: #ff7200;
 }
 
-#material {
+.material {
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 10px;
     padding-left: 10px;
+}
+
+#productName {
+    padding-bottom: 1px;
 }
 
 #category {
@@ -105,11 +109,11 @@
 }
 
 #imageUrl {
-    padding-bottom: 1px;
     padding-right: 80px;
+    padding-bottom: 1px;
 }
 
-.labelm {
+#labelm {
     margin-right: 10px;
     margin-left: 40px;
 }

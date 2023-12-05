@@ -41,7 +41,7 @@ export default function AddProduct() {
     return (
         <>
             <form id="add" onSubmit={onSubmit}>
-                <div className="form">
+                <div className="add-form">
                     <h2>ADD Product</h2>
 
                     <label htmlFor="productName">Product Name:</label>
@@ -62,7 +62,7 @@ export default function AddProduct() {
                     <label htmlFor="product-img">Image:</label>
                     <input value={values.imageUrl} onChange={onChangeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
 
-                    <label className="labelm" htmlFor="material">Material:</label>
+                    <label id="labelm" htmlFor="material">Material:</label>
                     <select id="material" name="material" value={values.material} onChange={onChangeHandler}>
                         <option value="mdf">MDF</option>
                         <option value="pdch">PDCH</option>

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #666;
+    margin-bottom: 8px;
 }
 
 .allProducts-info {

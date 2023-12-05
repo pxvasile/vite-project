@@ -1,7 +1,7 @@
 #product-details {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+    background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     overflow: hidden;
-    padding-bottom: 72px;
+    padding-bottom: 22px;
     height: auto;
     width: 66%;
     flex-wrap: wrap;
@@ -14,12 +14,11 @@
     width: 400px;
     font-family: sans-serif;
     text-align: center;
-    color: #fa7d09;
+    color: #ff7200;
     font-size: 34px;
     background-color: #fff;
     border-radius: 10px;
     margin: 2px;
-    margin-top: 14px;
 }
 
 .info-section {
@@ -56,7 +55,7 @@
     color: #fff;
     padding: 7px;
     border-radius: 5px;
-    background-color: #fa7d09;
+    background-color: #ff7200;
 }
 
 .type {

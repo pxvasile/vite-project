@@ -2,7 +2,7 @@
     background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     overflow: hidden;
     padding-bottom: 72px;
-    height: auto;
+    height: 680px;
     width: 100%;
     /* text-align: center; */
     display: block;
@@ -11,7 +11,7 @@
 
 .about-container {
     margin: auto;
-    width: 40%;
+    width: 50%;
 }
 
 .about-head h1 {
@@ -21,19 +21,19 @@
     text-align: center;
     display: block;
     font-weight: bold;
-    color: black;
-    font-size: xxx-large;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
 }
 
 .about-content h2 {
     font-size: 26px;
-    color: black;
+    color: rgb(255, 255, 255);
     margin-top: 22px;
 }
 
 .about-content p {
     font-size: 20px;
-    color: black;
+    color: rgb(255, 255, 255);
     margin-top: 20px;
     text-align: justify;
     text-justify: inter-word;
@@ -41,5 +41,5 @@
 }
 
 .contact-page {
-    color: rgb(104, 0, 201);
+    color: rgb(75, 20, 128);
 }

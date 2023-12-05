@@ -5,79 +5,14 @@
 
 .main{
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url("../images/slider-bg.jpg");
+    background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     background-position: center;
     background-size: cover;
-    height: 93vh;
+    height: 92vh;
 }
 
 .main{
     background: url('../images/slider-bg.jpg') no-repeat center center / cover;
-}
-
-.navbar{
-    width: 100rem;
-    height: 4.6875rem;
-    margin: auto;
-}
-
-.icon{
-    width: 12.5rem;
-    float: left;
-    height: 4.375rem;
-}
-
-.logo-name{
-    color: #fa7d09;
-    font-size: 30px;
-    font-family: Arial;
-    float: left;
-    padding-top: 17px;
-    margin-top: 5px
-}
-
-.menu{
-    width: 62.5rem;
-    float: left;
-    height: 4.375rem;
-}
-
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 4%;
-}
-
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 30px;
-    font-size: 20px;
-}
-
-ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-}
-
-ul li span{
-    text-decoration: none;
-    color: #fff;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-}
-
-ul li a:hover{
-    color: #fa7d09;
-    font-weight: bold;
-    background: #54586352;
-	border-bottom: 2px solid #e2b17b;
 }
 
 .search{

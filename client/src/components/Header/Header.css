@@ -1,0 +1,64 @@
+.navbar{
+    width: 100rem;
+    height: 4.6875rem;
+    margin: auto;
+}
+
+.icon{
+    width: 12.5rem;
+    float: left;
+    height: 4.375rem;
+}
+
+.logo-name{
+    color: #ff7200;
+    font-size: 28px;
+    font-family: Arial;
+    float: left;
+    padding-top: 17px;
+    margin-top: 5px;
+}
+
+.menu{
+    width: 62.5rem;
+    float: left;
+    height: 4.375rem;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4%;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li span{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #fa7d09;
+    font-weight: bold;
+    background: #54586352;
+	border-bottom: 2px solid #e2b17b;
+}

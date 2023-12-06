@@ -1,0 +1,38 @@
+#catalog-page {
+    background: linear-gradient(
+      to top,
+      rgba(102, 102, 102, 0.8) 50%,
+      rgba(102, 102, 102, 0.8) 50%
+    );
+    overflow: hidden;
+    padding-bottom: 72px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .catalogHead h1 {
+    font-family: "Agency FB";
+    text-transform: uppercase;
+    background: linear-gradient(
+      to top,
+      rgba(102, 102, 102, 0.8) 50%,
+      rgba(102, 102, 102, 0.8) 50%
+    );
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+  }
+  
+  .no-articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB";
+  }
+  

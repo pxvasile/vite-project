@@ -2,6 +2,7 @@ const Path = {
     Home: '/',
     Catalog: '/catalog',
     AddProduct: '/add-product',
+    Search: '/search/:productName',
     AboutUs: '/about-us',
     ContactUs: '/contact-us',
     Login: '/login',

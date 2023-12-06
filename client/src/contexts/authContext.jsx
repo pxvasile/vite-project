@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import * as productService from '../services/productService';
 import * as authService from '../services/authService';
 
+
 import Path from '../paths';
 import usePersistedState from "../hooks/usePersistedState";
 
@@ -28,7 +29,7 @@ export const AuthProvider = ({
             const newProduct = await productService.create(data);
 
             setProducts(state => [...state, newProduct]);
-    
+
             navigate("/catalog");
         } catch (error) {
             alert(error.message);
@@ -103,17 +104,12 @@ export const AuthProvider = ({
         navigate('/catalog');
     }
 
-    const searchClickHandler = (productId) => {
-        productService.getAll(productId);
-    }
-
     const values = {
         onAddProductSubmit,
         logoutSubmitHandler,
         registerSubmitHandler,
         loginSubmitHandler,
         confirmClickHandler,
-        searchClickHandler,
         products,
         username: auth.username || auth.email,
         email: auth.email,

@@ -1,6 +1,6 @@
 .add-form {
-    width: 25rem;
-    height: 29rem;
+    width: 23rem;
+    height: 40rem;
     background: linear-gradient(to top, rgba(102, 102, 102, 0.8)50%, rgba(102, 102, 102, 0.8)50%);
     position: absolute;
     left: 42%;
@@ -12,7 +12,7 @@
 }
 
 .add-form h2 {
-    width: 400px;
+    width: 360px;
     height: 40px;
     font-family: sans-serif;
     text-align: center;
@@ -45,7 +45,7 @@
     width: 400px;
     height: 35px;
     background: transparent;
-    border-bottom: 1px solid #fa7d09;
+    /* border-bottom: 1px solid #fa7d09; */
     border-top: none;
     border-right: none;
     border-left: none;
@@ -73,13 +73,14 @@
     background: #ff7200;
     font-weight: bold;
     border: none;
-    margin-top: 30px;
     font-size: 18px;
     border-radius: 10px;
     cursor: pointer;
     color: #fff;
     transition: 0.4s ease;
     margin-left: 20%;
+    float: right;
+    margin-right: 48px;
 }
 
 .btnn:hover{
@@ -89,7 +90,6 @@
 
 .material {
     margin-top: 30px;
-    margin-bottom: 30px;
     margin-left: 10px;
     padding-left: 10px;
 }
@@ -109,11 +109,23 @@
 }
 
 #imageUrl {
-    padding-right: 80px;
     padding-bottom: 1px;
+    padding-right: 80px;
+}
+
+#productDetails {
+    width: 370px;
+    height: 100px;
+    font-size: 14pt;
+}
+
+.details {
+    float: right;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-right: 98px;
 }
 
 #labelm {
     margin-right: 10px;
-    margin-left: 40px;
 }

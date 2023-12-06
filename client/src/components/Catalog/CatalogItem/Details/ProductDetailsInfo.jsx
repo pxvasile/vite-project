@@ -49,14 +49,13 @@ export default function ProductDetailsInfo() {
                     <div className="product-header">
                         <img className="product-img" src={productDetails.imageUrl} />
                         <h1>{productDetails.productName}</h1>
-                        <span className="material">Material</span>
+                        <span className="material">MATERIAL</span>
                         <p className="type">{productDetails.material}</p>
+                        <span className="material">PRICE</span>
+                        <p className="type">${productDetails.price}</p>
                     </div>
                     <p className="text">
-                        Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work
-                        with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy
-                        creatures live side by side with humans. A human cop is forced
-                        to work with an Orc to find a weapon everyone is prepared to kill for.
+                      {productDetails.productDetails}
                     </p>
 
                     {userId === productDetails._ownerId && (<div className="buttons">

@@ -4,6 +4,7 @@
     padding-bottom: 22px;
     height: auto;
     width: 66%;
+    border-radius: 0.625rem;
     flex-wrap: wrap;
     justify-content: space-around;
     display: flex;

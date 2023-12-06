@@ -10,6 +10,7 @@ export default function AddProduct() {
         category: '',
         price: '',
         imageUrl: '',
+        productDetails: '',
         material: ''
     });
 
@@ -20,7 +21,7 @@ export default function AddProduct() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        if (values.category == "" || values.imageUrl == "" || values.material == "" || values.price == "" || values.productName == "") {
+        if (values.category == "" || values.imageUrl == "" || values.material == "" || values.price == "" || values.productName == "" || values.productDetails == "") {
             alert("All fields is Required!");
             return;
         }
@@ -53,20 +54,23 @@ export default function AddProduct() {
                         placeholder="Enter Product name here..."
                     /><br />
 
-                    <label htmlFor="category">Category:</label>
+                    <label className="category" htmlFor="category">Category:</label>
                     <input value={values.category} onChange={onChangeHandler} type="text" id="category" name="category" placeholder="Enter Category Here..." /><br />
 
-                    <label htmlFor="price">Price:</label>
+                    <label className="category" htmlFor="price">Price:</label>
                     <input value={values.price} onChange={onChangeHandler} type="number" id="price" name="price" placeholder="Enter Price Here..." /><br />
 
                     <label htmlFor="product-img">Image:</label>
                     <input value={values.imageUrl} onChange={onChangeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
 
-                    <label id="labelm" htmlFor="material">Material:</label>
+                    <label className="details" htmlFor="productDetails">Product Details:</label>
+                    <textarea value={values.productDetails} onChange={onChangeHandler} type="text" id="productDetails" name="productDetails" placeholder="Product details here.." />
+
+                    <label id="labelm" htmlFor="labelm">Material:</label>
                     <select id="material" name="material" value={values.material} onChange={onChangeHandler}>
-                        <option value="mdf">MDF</option>
-                        <option value="pdch">PDCH</option>
-                        <option value="solid-wood">Solid Wood</option>
+                        <option value="MDF">MDF</option>
+                        <option value="PDCH">PDCH</option>
+                        <option value="SOLID WOOD">SOLID WOOD</option>
                     </select>
                     <button type="submit" className="btnn" value="ADD Product">ADD PRODUCT</button>
                 </div>

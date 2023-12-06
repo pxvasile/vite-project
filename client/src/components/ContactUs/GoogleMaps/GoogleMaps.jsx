@@ -27,11 +27,11 @@ export default function GoogleMapModal() {
 
     return (
         <>
-            <div className='contact-container'>
+            <div>
             
-                <div style={{ width: '400px', height: '400px' }}>
+                <div style={{ width: '500px', height: '400px' }}>
                     {isLoaded ? <GoogleMap
-                        mapContainerStyle={{ width: '400px', height: '400px' }}
+                        mapContainerStyle={{ width: '500px', height: '400px' }}
                         onclick={() => setActiveMarkers(null)}
                         center={{ lat: 43.207437, lng: 23.551766 }}
                         zoom={10}

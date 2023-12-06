@@ -102,9 +102,10 @@ export const AuthProvider = ({
         setProducts(state => state.filter(x => x._id !== productId));
         navigate('/catalog');
     }
-    // const deleteProduct = (productId) => {
-    //     return productService.find(product => product._id === productId);
-    // }
+
+    const searchClickHandler = (productId) => {
+        productService.getAll(productId);
+    }
 
     const values = {
         onAddProductSubmit,
@@ -112,6 +113,7 @@ export const AuthProvider = ({
         registerSubmitHandler,
         loginSubmitHandler,
         confirmClickHandler,
+        searchClickHandler,
         products,
         username: auth.username || auth.email,
         email: auth.email,

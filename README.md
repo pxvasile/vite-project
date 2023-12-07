@@ -11,7 +11,9 @@ WOODWORLD project is a web aplication for small caprenter company that presents 
  - [Running the Application](#running-the-application)
     - [ Server Setup ](#server-setup)
     - [ Client Setup ](#client-setup)
-    
+- [License](#license)
+- [Credits](#credits)
+
 ##  Project intention
 
 ## Application Structure:

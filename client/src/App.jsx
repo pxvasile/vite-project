@@ -18,6 +18,8 @@ import DeleteModal from './components/Catalog/CatalogItem/Details/ProductDetails
 import AuthGuard from './guards/AuthGuard';
 import ContactUs from './components/ContactUs/ContactUs';
 import SearchModal from './components/Search/SearchModal/SeachModal';
+import NotFound from './components/NotFound/NotFound';
+
 
 function App() {
 
@@ -43,6 +45,7 @@ function App() {
                             <Route path={Path.ProductDetailsEdit} element={<ProductDetailsEdit />} />
                             <Route path={Path.DeleteModal} element={<DeleteModal />} />
                         </Route>
+                        <Route path={Path.NotFound} element={<NotFound />} />
                     </Routes>
                 </div>
                 <Footer />  

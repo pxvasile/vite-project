@@ -11,6 +11,7 @@ const Path = {
     ProductDetails: '/catalog/:productId',
     ProductDetailsEdit: '/catalog/:productId/edit',
     DeleteModal: '/catalog/:productId/delete',
+    NotFound: '*',
 };
 
 export default Path;

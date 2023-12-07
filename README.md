@@ -8,7 +8,12 @@ WOODWORLD project is a web aplication for small caprenter company that presents 
     - [ Public Part (Accessible without authentication) ](#public-part)
     - [ Private Part (Available for Registered Users) ](#private-part)
  - [General functionality](#general-functionality)
-    
+ - [Running the Application](#running-the-application)
+    - [ Server Setup ](#server-setup)
+    - [ Client Setup ](#client-setup)
+- [License](#license)
+- [Credits](#credits)
+
 ##  Project intention
 
 ## Application Structure:
@@ -48,3 +53,62 @@ Web application uses the following technologies, frameworks, and development tec
 - The application is divided into components with separate CSS files
 
 - Using of programming concepts - React Hooks, Context API
+
+## Running the Application
+
+### Clone the Repository
+
+```bash
+https://github.com/pxvasile/vite-project.git
+```
+## Windows OS
+
+### Server Setup
+
+- Open a new terminal window/tab in the root directory of your project.
+
+- Navigate to `server` directory:
+```bash
+cd server
+```
+- Install server dependencies:
+```bash
+npm install
+```
+- To set up the server, run the following command:
+```bash
+node .\server.js
+```
+- This script will:
+```bash
+1. Set up environment variables for the server.
+2. Install server dependencies.
+3. Start the server in development mode.
+```
+### Client Setup
+
+- Open a new terminal window/tab in the root directory of your project.
+ - Navigate to `client` directory:
+```bash
+cd client
+```
+- Install client dependencies:
+```bash
+npm install
+```
+- Start the client in development mode:
+```bash
+npm run dev
+```
+- Client setup complete! Open the following link in your web browser: http://localhost:5173
+
+### License
+
+- This project is licensed under the MIT License - see the LICENSE file for details.
+
+### Credits
+
+- SoftUni Practice Server
+```bash
+https://github.com/softuni-practice-server/softuni-practice-server.git
+```

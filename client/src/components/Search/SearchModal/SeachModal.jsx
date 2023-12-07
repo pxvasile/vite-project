@@ -2,14 +2,12 @@ import { useContext } from 'react';
 
 import CatalogItem from "../../Catalog/CatalogItem/CatalogItem";
 import AuthContext from '../../../contexts/authContext';
+import '../SearchModal/SearchModal.css'
 
-import '../../Catalog/Catalog.css';
-
-export default function Catalog({
-    searchProducts
-}) {
-    const { products } = useContext(AuthContext);
-
+export default function SearchModal(
+) {
+    const { searchProducts } = useContext(AuthContext);
+    console.log(searchProducts);
     return (
         <>
             <div className="catalogHead">

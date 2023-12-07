@@ -29,7 +29,7 @@ export default function AboutUs() {
           </div>
           <div className="about-content">
             <h2>Who Buys It?</h2>
-            <p>Most of our custom comes from high-street retailers. We also work in the contract furniture market such as the health and leisure sectors. If you are interested in speaking to an advisor about your options, visit our <Link to={Path.Catalog} className="contact-page">contact page</Link>.</p>
+            <p>Most of our custom comes from high-street retailers. We also work in the contract furniture market such as the health and leisure sectors. If you are interested in speaking to an advisor about your options, visit our <Link to={Path.ContactUs} className="contact-page">contact page</Link>.</p>
           </div>
         </div>
       </section>

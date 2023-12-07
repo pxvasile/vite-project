@@ -1,14 +1,14 @@
 import { useContext, useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
 import * as searchService from '../../services/searchService';
 import './Search.css'
 import Path from '../../paths';
-import SearchModal from './SearchModal/SeachModal';
+import SearchModal from '../Search/SearchModal/SeachModal';
 
 export default function Search() {
-    const { productId } = useParams();
+    const navigate = useNavigate();
     const [values, setValues] = useState({});
     const [searchProducts, setSearchedProducts] = useState([]);
 
@@ -18,10 +18,10 @@ export default function Search() {
 
     const searchClickHandler = async (values) => {
         const searchProduct = await searchService.getAll(values);
-
+console.log(searchProduct);
         setSearchedProducts(searchProduct);
 
-       <SearchModal searchProducts={searchProducts} />
+      navigate(<SearchModal searchProducts={searchProducts} />)
     }
     return (
         <>

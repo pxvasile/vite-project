@@ -1,0 +1,20 @@
+.not-found {
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.not-found h1 {
+    color: white;
+    font-size: 150px;
+}
+
+.not-found h2 {
+    color: white;
+    font-size: 40px;
+}
+
+.not-found h3 {
+    color: white;
+    font-size: 25px;
+}

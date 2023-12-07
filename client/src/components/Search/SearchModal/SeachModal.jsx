@@ -7,7 +7,7 @@ import '../SearchModal/SearchModal.css'
 export default function SearchModal(
 ) {
     const { searchProducts } = useContext(AuthContext);
-    console.log(searchProducts);
+
     return (
         <>
             <div className="catalogHead">

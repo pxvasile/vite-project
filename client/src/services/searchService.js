@@ -10,11 +10,10 @@ export const getAll = async (values) => {
 
     const newValues = Object.values(values);
     const key = (JSON.stringify(newValues[0]));
-    const query = encodeURIComponent(`where=${key}`)
 
-    const result = await request.get(`${baseUrl}?${query}`); 
+    const query = encodeURIComponent(key);
 
-    const final = result.find(x => x.productName !== key);
+    const result = await request.get(`${baseUrl}?where=productName LIKE ${query}`); 
 
-    return final;
+    return result;
 }

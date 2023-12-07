@@ -4,25 +4,17 @@ import { Routes, Route } from 'react-router-dom';
 
 import * as searchService from '../../services/searchService';
 import './Search.css'
-import Path from '../../paths';
-import SearchModal from '../Search/SearchModal/SeachModal';
+
+import AuthContext from '../../contexts/authContext';
 
 export default function Search() {
-    const navigate = useNavigate();
+    const { searchClickHandler } = useContext(AuthContext);
     const [values, setValues] = useState({});
-    const [searchProducts, setSearchedProducts] = useState([]);
 
     const onChangeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }));
     }
 
-    const searchClickHandler = async (values) => {
-        const searchProduct = await searchService.getAll(values);
-console.log(searchProduct);
-        setSearchedProducts(searchProduct);
-
-      navigate(<SearchModal searchProducts={searchProducts} />)
-    }
     return (
         <>
             <div className="search">

@@ -7,7 +7,6 @@ import './Header.css';
 import Search from '../Search/Search';
 
 export default function Header() {
-
     const { username, isAuthenticated } = useContext(AuthContext);
     return (
         <div className="navbar">

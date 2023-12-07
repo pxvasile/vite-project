@@ -17,6 +17,7 @@ import ProductDetailsEdit from './components/Catalog/CatalogItem/Details/Product
 import DeleteModal from './components/Catalog/CatalogItem/Details/ProductDetailsEdit/DeleteModal/DeleteModal';
 import AuthGuard from './guards/AuthGuard';
 import ContactUs from './components/ContactUs/ContactUs';
+import SearchModal from './components/Search/SearchModal/SeachModal';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                     <Routes>
                         <Route path={Path.Home} element={<Home />} />
                         <Route path={Path.Catalog} element={<Catalog />} />
+                        <Route path={Path.Search} element={<SearchModal />} />
                         <Route path={Path.AboutUs} element={<AboutUs />} />
                         <Route path={Path.ContactUs} element={<ContactUs />} />
                         <Route path={Path.Login} element={<Login />} />

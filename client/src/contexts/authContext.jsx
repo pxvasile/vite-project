@@ -59,18 +59,18 @@ export const AuthProvider = ({
 
     const registerSubmitHandler = async (values) => {
         if (values.username === "" || values.email === "" || values.password === "" || values.repass === "") {
-            alert("All fields are required!");
+            console.log("All fields are required!");
             return;
         }
-        if (values.username.length >= 4 || values.username.length <= 18) {
-            alert("Username should be 3-16 characters!");
-            return;
-        }
-        if (values.password.length < 4) {
-            alert('Passwords is too weak and must be at least 4 characters long');
-        }
+        // if (values.username.length >= 4 && values.username.length <= 18) {
+        //     alert("Username should be 3-16 characters!");
+        //     return;
+        // }
+        // if (values.password.length < 4) {
+        //     alert('Passwords is too weak and must be at least 4 characters long');
+        // }
         if (values.password != values.repass) {
-            alert('Passwords dont\'t match');
+            console.log('Passwords dont\'t match');
             return;
         }
         try {
@@ -85,9 +85,9 @@ export const AuthProvider = ({
             localStorage.setItem('accessToken', result.accessToken);
 
             navigate(Path.Home);
-
+         
         } catch (error) {
-            alert(error.message)
+            console.log(error.message);
         }
     };
 

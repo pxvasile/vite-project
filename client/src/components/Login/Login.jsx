@@ -29,7 +29,6 @@ export default function Login() {
                     onChange={onChange}
                     value={values[LoginFormKeys.Email]}
                 />
-                {/* {errors.name && <p style={{color: red}}>{errors.name}</p>} */}
 
                 <input 
                     type="password" 
@@ -38,17 +37,18 @@ export default function Login() {
                     onChange={onChange}
                     value={values[LoginFormKeys.Password]}
                 />
+
                 <button type="submit" className="form-login-btnn" value="Login">Login</button>
 
                 <p className="link">Don't have an account<Link className="link-sign" to={Path.Register}>Sign up here</Link></p>
                 <p className="liw">Log in with</p>
 
                 <div className="icons">
-                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    <Link to="#"><ion-icon name="logo-facebook"></ion-icon></Link>
+                    <Link to="#"><ion-icon name="logo-instagram"></ion-icon></Link>
+                    <Link to="#"><ion-icon name="logo-twitter"></ion-icon></Link>
+                    <Link to="#"><ion-icon name="logo-google"></ion-icon></Link>
+                    <Link to="#"><ion-icon name="logo-skype"></ion-icon></Link>
                 </div>
 
             </form>

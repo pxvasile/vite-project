@@ -26,7 +26,7 @@ export default function ContactUs() {
                         <label className='subject' htmlFor="subject">Subject:</label>
                         <textarea id="subject" name="subject" placeholder="Write something.." /><br/>
 
-                        <button type="submit" className="btnn" value="ADD Product">SUBMIT</button>
+                        {/* <button type="submit" className="btnn" value="ADD Product">SUBMIT</button> */}
 
                     </form> 
                 </div>

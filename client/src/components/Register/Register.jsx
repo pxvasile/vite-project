@@ -16,48 +16,57 @@ const RegisterFormKeys = {
 
 export default function Register() {
     const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    const { formValues, onChange, onSubmit, formErrors } = useForm(registerSubmitHandler, {
         [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
-    })
+    });
+
 
     return (
         <>
             <form className="form-register" onSubmit={onSubmit}>
                 <h2>Register Here</h2>
-                <input 
-                    type="text" 
-                    name={RegisterFormKeys.Username} 
-                    onChange={onChange} 
+                <input
+                    type="text"
+                    name={RegisterFormKeys.Username}
+                    onChange={onChange}
                     placeholder="Enter Name Here..."
-                    value={values[RegisterFormKeys.Username]}
+                    value={formValues[RegisterFormKeys.Username]}
                 />
+                {formErrors.username && (<p style={{ color: "red" }}>{formErrors.username}</p>)}
+                {/* {errors.email ? <p style={{ color: "red" }}>{errors.username}</p> : <p>Username must be at least 3 characters long!</p>} */}
 
-                <input 
-                    type="email" 
-                    name={RegisterFormKeys.Email} 
-                    onChange={onChange} 
-                    placeholder="Enter Email Here..." 
-                    value={values[RegisterFormKeys.Email]}
+                <input
+                    type="email"
+                    name={RegisterFormKeys.Email}
+                    onChange={onChange}
+                    placeholder="Enter Email Here..."
+                    value={formValues[RegisterFormKeys.Email]}
                 />
+                {formErrors.email && <p style={{ color: "red" }}>{formErrors.email}</p>}
+                {/* {errors.email && (<p style={{ color: "red" }}>{errors.email}</p>)} */}
 
-                <input 
-                    type="password" 
-                    name={RegisterFormKeys.Password} 
-                    onChange={onChange} 
-                    placeholder="Enter Password Here..." 
-                    value={values[RegisterFormKeys.Password]}
+                <input
+                    type="password"
+                    name={RegisterFormKeys.Password}
+                    onChange={onChange}
+                    placeholder="Enter Password Here..."
+                    value={formValues[RegisterFormKeys.Password]}
                 />
+                <p style={{ color: "red" }}>{formErrors.password}</p>
+                {/* {errors.password && (<p style={{ color: "red" }}>{errors.password}</p>)} */}
 
-                <input 
-                    type="password" 
+                <input
+                    type="password"
                     name={RegisterFormKeys.ConfirmPassword}
-                    onChange={onChange}  
-                    placeholder="Confirm Password Here..." 
-                    value={values[RegisterFormKeys.ConfirmPassword]}
+                    onChange={onChange}
+                    placeholder="Confirm Password Here..."
+                    value={formValues[RegisterFormKeys.ConfirmPassword]}
                 />
+                <p style={{ color: "red" }}>{formErrors[RegisterFormKeys.ConfirmPassword]}</p>
+                {/* {errors.repass && (<p style={{ color: "red" }}>{errors.repass}</p>)} */}
 
                 <button type="submit" className="form-register-btnn" value="Register">Register</button>
 

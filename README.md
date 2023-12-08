@@ -1,6 +1,6 @@
 # WOODWORLD
 
-WOODWORLD project is a web aplication for small caprenter company that presents itself, its products and skills. It is an web application(Single Page Application) using React.js.
+WOODWORLD project is a web aplication for small caprenter company that presents itself, its products and skills. It is a web application(Single Page Application) using React.js.
 
 ## Documentation
  - [Project intention](#project-intention)
@@ -15,6 +15,7 @@ WOODWORLD project is a web aplication for small caprenter company that presents 
 - [Credits](#credits)
 
 ##  Project intention
+This is a SoftUni Practice Application.
 
 ## Application Structure:
 - Public Part (Accessible without authentication)

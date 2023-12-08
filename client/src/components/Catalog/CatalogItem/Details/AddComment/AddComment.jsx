@@ -13,7 +13,7 @@ export default function AddComment({
         comment: '',
     }), [])
 
-    const { values, onChange, onSubmit } = useForm(addCommentHandler, initialValues);
+    const { formValues, onChange, onSubmit } = useForm(addCommentHandler, initialValues);
 
     // const [values, setValues] = useState(initialValues);
 
@@ -35,7 +35,7 @@ export default function AddComment({
                 <textarea
                     name="comment"
                     placeholder="Comment......"
-                    value={values.comment}
+                    value={formValues.comment}
                     onChange={onChange}
                 />
                 <input className="comment-button" type="submit" value="Add Comment" />

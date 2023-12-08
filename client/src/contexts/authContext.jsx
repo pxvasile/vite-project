@@ -25,7 +25,6 @@ export const AuthProvider = ({
     }, []);
 
     const onAddProductSubmit = async (data) => {
-
         try {
             const newProduct = await productService.create(data);
 
@@ -39,11 +38,6 @@ export const AuthProvider = ({
     }
 
     const loginSubmitHandler = async (values) => {
-        if (values.email == "" && values.password == "") {
-            alert("All fields is Required!");
-            return;
-        }
-
         try {
             const result = await authService.login(values.email, values.password);
 
@@ -57,11 +51,29 @@ export const AuthProvider = ({
         }
     };
 
-    const registerSubmitHandler = async (values) => {
-        if (values.username === "" || values.email === "" || values.password === "" || values.repass === "") {
-            console.log("All fields are required!");
-            return;
+    const registerSubmitHandler = async (values, err, noErrors) => {
+        if (JSON.stringify(err) === JSON.stringify(noErrors)) {
+            try {
+                const result = await authService.register(
+                    values.username,
+                    values.email,
+                    values.password
+                )
+
+                setAuth(result);
+
+                localStorage.setItem('accessToken', result.accessToken);
+
+                navigate(Path.Home);
+
+            } catch (error) {
+                alert(error.message);
+            }
         }
+        // if (values.username === "" || values.email === "" || values.password === "" || values.repass === "") {
+        //     console.log("All fields are required!");
+        //     return;
+        // }
         // if (values.username.length >= 4 && values.username.length <= 18) {
         //     alert("Username should be 3-16 characters!");
         //     return;
@@ -69,30 +81,13 @@ export const AuthProvider = ({
         // if (values.password.length < 4) {
         //     alert('Passwords is too weak and must be at least 4 characters long');
         // }
-        if (values.password != values.repass) {
-            console.log('Passwords dont\'t match');
-            return;
-        }
-        try {
-            const result = await authService.register(
-                values.username,
-                values.email,
-                values.password
-            )
-
-            setAuth(result);
-
-            localStorage.setItem('accessToken', result.accessToken);
-
-            navigate(Path.Home);
-         
-        } catch (error) {
-            console.log(error.message);
-        }
+        // if (values.password != values.repass) {
+        //     console.log('Passwords dont\'t match');
+        //     return;
+        // }
     };
 
     const logoutSubmitHandler = async () => {
-
         setAuth({});
 
         localStorage.removeItem('accessToken');

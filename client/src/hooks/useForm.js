@@ -9,21 +9,25 @@ export default function useForm(submitHandler, initialValues) {
             ...state,
             [e.target.name]: e.target.value
         }))
-
     };
+
+    // const reset = () => {
+    //     setValues(initialValues);
+    // }
 
     const onSubmit = (e) => {
         e.preventDefault();
 
         setFormErrors(validate(formValues));
+        const noErrors = {};
+        const err = validate(formValues);
 
-        submitHandler(formValues);
-
-        // setValues(initialValues);
+        submitHandler(formValues, noErrors, err);
     }
 
     const validate = (values) => {
         const errors = {};
+
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if (!values.username) {
             errors.username = "Username is required!";

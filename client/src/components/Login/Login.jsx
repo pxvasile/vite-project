@@ -13,7 +13,7 @@ const LoginFormKeys = {
 
 export default function Login() {
     const { loginSubmitHandler } = useContext(AuthContext);
-    const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+    const {formValues, onChange, onSubmit} = useForm(loginSubmitHandler, {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     });
@@ -27,7 +27,7 @@ export default function Login() {
                     name={LoginFormKeys.Email} 
                     placeholder="Enter Email Here..." 
                     onChange={onChange}
-                    value={values[LoginFormKeys.Email]}
+                    value={formValues[LoginFormKeys.Email]}
                 />
 
                 <input 
@@ -35,7 +35,7 @@ export default function Login() {
                     name={LoginFormKeys.Password} 
                     placeholder="Enter Password Here..." 
                     onChange={onChange}
-                    value={values[LoginFormKeys.Password]}
+                    value={formValues[LoginFormKeys.Password]}
                 />
 
                 <button type="submit" className="form-login-btnn" value="Login">Login</button>

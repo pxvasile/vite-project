@@ -1542,6 +1542,7 @@
     			category: "DinningRoom",
     			price: 235,
     			imageUrl: "/images/Scandinavian-style-oak-dining-table.jpg",
+                productDetails: "A table is an item of furniture with a raised flat top and is supported most commonly by 1 to 4 legs (although some can have more). It is used as a surface for working at, eating from or on which to place things.",
     			material: "PDCH",
     			_createdOn: 1615545143015,
     			_id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
@@ -1552,6 +1553,7 @@
     			category: "Homemade",
     			price: 320,
     			imageUrl: "/images/s1.jpg",
+                productDetails: "A desk or bureau is a piece of furniture with a flat table-style work surface used in a school, office, home or the like for academic, professional or domestic activities such as reading, writing, or using equipment such as a computer",
     			material: "Solid Wood",
     			_createdOn: 1615545572296,
     			_id: "f5929b5c-bca4-4026-8e6e-c09e73908f77"
@@ -1562,6 +1564,7 @@
     			category: "Office",
     			price: 180,
     			imageUrl: "/images/desk-masiv.jpg",
+                productDetails: "A desk or bureau is a piece of furniture with a flat table-style work surface used in a school, office, home or the like for academic, professional or domestic activities such as reading, writing, or using equipment such as a computer",
     			material: "MDF",
     			_createdOn: 1615546332126,
     			_id: "c7f51805-242b-45ed-ae3e-80b68605141b"

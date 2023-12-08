@@ -34,7 +34,6 @@ export const AuthProvider = ({
         } catch (error) {
             alert(error.message);
         }
-
     }
 
     const loginSubmitHandler = async (values) => {
@@ -70,21 +69,6 @@ export const AuthProvider = ({
                 alert(error.message);
             }
         }
-        // if (values.username === "" || values.email === "" || values.password === "" || values.repass === "") {
-        //     console.log("All fields are required!");
-        //     return;
-        // }
-        // if (values.username.length >= 4 && values.username.length <= 18) {
-        //     alert("Username should be 3-16 characters!");
-        //     return;
-        // }
-        // if (values.password.length < 4) {
-        //     alert('Passwords is too weak and must be at least 4 characters long');
-        // }
-        // if (values.password != values.repass) {
-        //     console.log('Passwords dont\'t match');
-        //     return;
-        // }
     };
 
     const logoutSubmitHandler = async () => {

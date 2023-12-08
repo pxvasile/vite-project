@@ -9,7 +9,5 @@ export default function AuthGuard() {
         return <Navigate to='/login' />
     }
 
-    return (
-        <Outlet />
-    )
+    return <Outlet />;
 }

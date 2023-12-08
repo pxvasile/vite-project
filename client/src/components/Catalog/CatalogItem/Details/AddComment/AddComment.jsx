@@ -15,23 +15,10 @@ export default function AddComment({
 
     const { formValues, onChange, onSubmit } = useForm(addCommentHandler, initialValues);
 
-    // const [values, setValues] = useState(initialValues);
-
-    // const onChangeHandler = (e) => {
-    //     setValues(state => ({ ...state, [e.target.name]: e.target.value }));
-    // }
-
     return (
         <>
             <form className="comment-form" onSubmit={onSubmit}>
                 <h2>Add new comment:</h2>
-                {/* <input
-                    type="text"
-                    name="username"
-                    placeholder="Username..."
-                    value={values.username}
-                    onChange={onChangeHandler}
-                /> */}
                 <textarea
                     name="comment"
                     placeholder="Comment......"

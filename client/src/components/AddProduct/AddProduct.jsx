@@ -20,22 +20,18 @@ export default function AddProduct() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
         if (values.category == "" || values.imageUrl == "" || values.material == "" || values.price == "" || values.productName == "" || values.productDetails == "") {
             alert("All fields is Required!");
             return;
         }
-
         if (values.price <= 0) {
             alert("Please enter a positive price!");
             return;
         }
-
         if (values.productName.length < 4 || values.imageUrl.length < 4 || values.category.length < 4) {
             alert('All fields must be at least 4 characters long!');
             return;
         }
-
         onAddProductSubmit(values);
     }
 

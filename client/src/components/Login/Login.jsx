@@ -44,7 +44,7 @@ export default function Login() {
                 <p className="liw">Log in with</p>
 
                 <div className="icons">
-                    <Link to="#"><ion-icon name="logo-facebook"></ion-icon></Link>
+                    <Link to="https://www.facebook.com/plamen.vasilev.351"><ion-icon name="logo-facebook"></ion-icon></Link>
                     <Link to="#"><ion-icon name="logo-instagram"></ion-icon></Link>
                     <Link to="#"><ion-icon name="logo-twitter"></ion-icon></Link>
                     <Link to="#"><ion-icon name="logo-google"></ion-icon></Link>

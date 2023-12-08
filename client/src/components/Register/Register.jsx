@@ -33,40 +33,40 @@ export default function Register() {
                     name={RegisterFormKeys.Username}
                     onChange={onChange}
                     placeholder="Enter Name Here..."
+                    autoComplete='username'
                     value={formValues[RegisterFormKeys.Username]}
                 />
                 {formErrors.username && (<p style={{ color: "red" }}>{formErrors.username}</p>)}
-                {/* {errors.email ? <p style={{ color: "red" }}>{errors.username}</p> : <p>Username must be at least 3 characters long!</p>} */}
 
                 <input
                     type="email"
                     name={RegisterFormKeys.Email}
                     onChange={onChange}
                     placeholder="Enter Email Here..."
+                    autoComplete='email'
                     value={formValues[RegisterFormKeys.Email]}
                 />
-                {formErrors.email && <p style={{ color: "red" }}>{formErrors.email}</p>}
-                {/* {errors.email && (<p style={{ color: "red" }}>{errors.email}</p>)} */}
+                {formErrors.email && <p style={{ color: "red" }}>{formErrors.email}</p>}            
 
                 <input
                     type="password"
                     name={RegisterFormKeys.Password}
                     onChange={onChange}
                     placeholder="Enter Password Here..."
+                    autoComplete='password'
                     value={formValues[RegisterFormKeys.Password]}
                 />
-                <p style={{ color: "red" }}>{formErrors.password}</p>
-                {/* {errors.password && (<p style={{ color: "red" }}>{errors.password}</p>)} */}
+               {formErrors.password && <p style={{ color: "red" }}>{formErrors.password}</p>}    
 
                 <input
                     type="password"
                     name={RegisterFormKeys.ConfirmPassword}
                     onChange={onChange}
                     placeholder="Confirm Password Here..."
+                    autoComplete='password'
                     value={formValues[RegisterFormKeys.ConfirmPassword]}
                 />
-                <p style={{ color: "red" }}>{formErrors[RegisterFormKeys.ConfirmPassword]}</p>
-                {/* {errors.repass && (<p style={{ color: "red" }}>{errors.repass}</p>)} */}
+                {formErrors.password && <p style={{ color: "red" }}>{formErrors.repass}</p>}
 
                 <button type="submit" className="form-register-btnn" value="Register">Register</button>
 

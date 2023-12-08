@@ -10,7 +10,7 @@ const Path = {
     Register: '/register',
     ProductDetails: '/catalog/:productId',
     ProductDetailsEdit: '/catalog/:productId/edit',
-    DeleteModal: '/catalog/:productId/delete',
+    DeleteProduct: '/catalog/:productId/delete',
     NotFound: '*',
 };
 

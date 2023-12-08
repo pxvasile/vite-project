@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import AuthContext from "../../../../../../contexts/authContext";
 
-import './DeleteModal.css';
+import './DeleteProduct.css';
 
 export default function Modal() {
   const { confirmClickHandler } = useContext(AuthContext);
@@ -13,7 +13,6 @@ export default function Modal() {
   const backClickHandler = () => {
     navigate(`/catalog/${productId}`);
   }
-
 
   return (
     <div className="modal">

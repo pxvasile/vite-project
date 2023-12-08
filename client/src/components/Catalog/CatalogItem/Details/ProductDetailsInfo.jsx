@@ -13,7 +13,6 @@ import './ProductDetailsInfo.css';
 export default function ProductDetailsInfo() {
     const { username, userId } = useContext(AuthContext);
     const { productId } = useParams();
-    // const [comments, setComments] = useState([]);
     const [comments, dispatch] = useReducer(reducer, []);
     const [productDetails, setProductDetails] = useState({});
 
@@ -32,9 +31,8 @@ export default function ProductDetailsInfo() {
     const addCommentHandler = async (values) => {
         values.productId = productDetails._id;
         values.username = username;
+        
         const newComment = await commentService.create(values);
-        // newComment.username = username;
-        // setComments(state => ([...state, values]));
         dispatch({
             type: 'ADD_COMMENT',
             payload: newComment,

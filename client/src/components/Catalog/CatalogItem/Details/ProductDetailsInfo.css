@@ -167,8 +167,9 @@
 }
 
 .no-comment p {
-    padding: 16px;
+    padding: 20px;
     color: white;
+    text-align: center;
 }
 
 

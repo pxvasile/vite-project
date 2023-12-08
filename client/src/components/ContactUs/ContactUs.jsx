@@ -1,5 +1,5 @@
 import './ContactUs.css';
-import GoogleMapModal from './GoogleMaps/GoogleMaps';
+import GoogleMapModal from '../ContactUs/GoogleMaps/GoogleMapModal';
 
 export default function ContactUs() {
     return (

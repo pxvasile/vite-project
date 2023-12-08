@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import CatalogItem from "../../Catalog/CatalogItem/CatalogItem";
 import AuthContext from '../../../contexts/authContext';
-import '../SearchModal/SearchModal.css'
+import '../SearchItems/SeachItems.css'
 
 export default function SearchModal(
 ) {
